@@ -16,7 +16,6 @@ public class Leetcode_1 {
         }
     }
 
-
     public static int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             int temp = nums[i];
