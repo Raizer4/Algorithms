@@ -1,7 +1,7 @@
-package practice.leetcode;
+package practice.leetcode.linkedList;
 
-import java.util.ArrayList;
-import java.util.List;
+// Remove Duplicates from Sorted List
+// https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
 
 public class Leetcode_83 {
 
@@ -24,7 +24,7 @@ public class Leetcode_83 {
 
     public static void main(String[] args) {
         ListNode listNode1 = deleteDuplicates(new ListNode(1, new ListNode(1, new ListNode(2, null))));
-        while (listNode1.next != null){
+        while (listNode1 != null){
             System.out.println(listNode1.val);
             listNode1 = listNode1.next;
         }
@@ -32,20 +32,17 @@ public class Leetcode_83 {
     }
 
     public static ListNode deleteDuplicates(ListNode head) {
-        ListNode dummy = new ListNode(0);
-        ListNode current = dummy;
-        List<Integer> list = new ArrayList<>();
+        ListNode current = head;
 
-        while (head.next != null){
-           if (!list.contains(head.val)){
-               list.add(head.val);
-               current.next = head.next;
-               current = current.next;
-           }
-           head = head.next;
+        while (current != null && current.next != null) {
+            if (current.val == current.next.val) {
+                current.next = current.next.next;
+            } else {
+                current = current.next;
+            }
         }
 
-        return dummy.next;
+        return head;
     }
 
 

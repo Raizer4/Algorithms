@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.linkedList;
 
 // Merge Two Sorted Lists
 // https://leetcode.com/problems/merge-two-sorted-lists/description/
@@ -38,12 +38,12 @@ public class Leetcode_21 {
         ListNode dummy = new ListNode(0);
         ListNode current = dummy;
 
-        while (list1 != null && list2 != null) {
+        while(list1 != null && list2 != null){
 
-            if (list1.val <= list2.val) {
+            if (list1.val <= list2.val){
                 current.next = list1;
                 list1 = list1.next;
-            } else {
+            }else {
                 current.next = list2;
                 list2 = list2.next;
             }
@@ -51,10 +51,9 @@ public class Leetcode_21 {
             current = current.next;
         }
 
-
-        if (list1 != null) {
+        if (list1 != null){
             current.next = list1;
-        } else {
+        }else{
             current.next = list2;
         }
 
