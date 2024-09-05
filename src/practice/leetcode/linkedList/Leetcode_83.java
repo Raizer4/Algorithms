@@ -34,10 +34,10 @@ public class Leetcode_83 {
     public static ListNode deleteDuplicates(ListNode head) {
         ListNode current = head;
 
-        while (current != null && current.next != null) {
-            if (current.val == current.next.val) {
+        while(current != null && current.next != null){
+            if (current.val == current.next.val){
                 current.next = current.next.next;
-            } else {
+            }else {
                 current = current.next;
             }
         }

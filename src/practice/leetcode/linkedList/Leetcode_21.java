@@ -28,7 +28,8 @@ public class Leetcode_21 {
         ListNode one = new ListNode(1,new ListNode(2,new ListNode(4,null)));
         ListNode two = new ListNode(1,new ListNode(3,new ListNode(4,null)));
         ListNode listNode = mergeTwoLists(one, two);
-        while (listNode.next != null){
+
+        while (listNode != null){
             System.out.println(listNode.val);
             listNode = listNode.next;
         }
