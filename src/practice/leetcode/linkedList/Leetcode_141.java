@@ -25,20 +25,20 @@ public class Leetcode_141 {
     }
 
     public static boolean hasCycle(ListNode head) {
-       ListNode slow = head;
        ListNode fast = head;
+       ListNode slow = head;
 
        while(fast != null && fast.next != null){
-            slow = slow.next;
-            fast = fast.next.next;
+           fast = fast.next.next;
+           slow = slow.next;
 
-           if (slow == fast){
+           if (fast == slow){
                return true;
            }
-
-           head = head.next;
        }
-       return false;
+
+        return false;
+
     }
 
 }

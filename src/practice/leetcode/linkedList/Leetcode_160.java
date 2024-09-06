@@ -32,18 +32,18 @@ public class Leetcode_160 {
         while (headA != null){
             temp = headB;
 
-            while (temp != null){
-                if (temp == headA){
+            while(temp != null){
+                if (headA == temp){
                     return temp;
                 }
                 temp = temp.next;
             }
-
             headA = headA.next;
         }
-
-
         return null;
     }
 
 }
+
+
+

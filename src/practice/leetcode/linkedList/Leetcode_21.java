@@ -54,13 +54,12 @@ public class Leetcode_21 {
 
         if (list1 != null){
             current.next = list1;
-        }else{
+        }else {
             current.next = list2;
         }
 
+
         return dummy.next;
     }
-
-
 
 }

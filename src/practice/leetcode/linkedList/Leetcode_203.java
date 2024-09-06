@@ -35,13 +35,13 @@ public class Leetcode_203 {
 
 
     public static ListNode removeElements(ListNode head, int val) {
-        while (head != null && head.val == val) {
+        while(head != null && head.val == val){
             head = head.next;
         }
 
         ListNode current = head;
 
-        while(current != null && current.next != null){
+        while (current != null && current.next != null){
 
             if (current.next.val == val){
                 current.next = current.next.next;
@@ -52,6 +52,7 @@ public class Leetcode_203 {
         }
 
         return head;
+
     }
 
 
