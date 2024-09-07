@@ -1,6 +1,10 @@
 package practice.leetcode.linkedList;
 
+// Palindrome Linked List
+// https://leetcode.com/problems/palindrome-linked-list/description/?envType=problem-list-v2&envId=linked-list&difficulty=EASY
 
+import java.util.ArrayList;
+import java.util.List;
 
 public class Leetcode_234 {
 
@@ -19,7 +23,22 @@ public class Leetcode_234 {
     }
 
     public static boolean isPalindrome(ListNode head) {
-        return false;
+        List<Integer> list = new ArrayList();
+
+        while(head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+
+        int left = 0;
+        int right = list.size()-1;
+
+        while(left < right && list.get(left) == list.get(right)) {
+            left++;
+            right--;
+        }
+
+        return left >= right;
     }
 
 }

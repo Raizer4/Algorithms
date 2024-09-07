@@ -34,18 +34,18 @@ public class Leetcode_206 {
     }
 
     public static ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode next = null;
-        ListNode curr = head;
+       ListNode prev = null;
+       ListNode next = null;
+       ListNode current = head;
 
-        while(curr != null){
-            next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-        }
+       while (current != null){
+           next = current.next;
+           current.next = prev;
+           prev = current;
+           current = next;
+       }
 
-        return prev;
+       return prev;
     }
 
 }
