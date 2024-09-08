@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.hash_table;
 
 // Roman to Integer
 // https://leetcode.com/problems/roman-to-integer/description/
@@ -14,11 +14,9 @@ public class Leetcode_13 {
     }
 
     public static int romanToInt(String s) {
-        int result = 0;
-
         char[] array = s.toCharArray();
-        HashMap<Character,Integer> map = new HashMap();
 
+        HashMap<Character,Integer> map = new HashMap();
         map.put('I',1);
         map.put('V',5);
         map.put('X',10);
@@ -27,18 +25,19 @@ public class Leetcode_13 {
         map.put('D',500);
         map.put('M',1000);
 
+        int result = 0;
         int prev = 0;
 
-        for (int i = array.length - 1; i >= 0; i--){
-            Integer temp = map.get(array[i]);
+        for (int i = s.length() - 1; i >= 0; i--){
+            char c = s.charAt(i);
+            Integer num = map.get(c);
 
-            if (prev > temp){
-                result -= temp;
+            if (prev > num){
+                result -= num;
             }else {
-                result += temp;
+                result += num;
             }
-
-            prev = temp;
+            prev = num;
         }
 
         return result;

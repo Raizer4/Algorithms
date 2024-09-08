@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.array;
 
 // Two Sum
 // https://leetcode.com/problems/two-sum/

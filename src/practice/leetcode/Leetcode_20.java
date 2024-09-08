@@ -16,7 +16,7 @@ public class Leetcode_20 {
     public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
 
-        HashMap<Character, Character> map = new HashMap<>();
+        HashMap<Character,Character> map = new HashMap<>();
         map.put(')','(');
         map.put(']','[');
         map.put('}','{');
@@ -26,9 +26,9 @@ public class Leetcode_20 {
         for (char temp : array){
             if (map.containsValue(temp)){
                 stack.push(temp);
-            }else if(stack.empty()){
+            }else if (stack.empty()){
                 return false;
-            }else if (map.containsKey(temp)){
+            }else if(map.containsKey(temp)) {
                 if (map.get(temp) != stack.pop()){
                     return false;
                 }
@@ -42,4 +42,5 @@ public class Leetcode_20 {
         }
 
     }
+
 }

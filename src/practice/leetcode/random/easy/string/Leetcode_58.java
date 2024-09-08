@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.string;
 
 // Length of Last Word
 // https://leetcode.com/problems/length-of-last-word/description/

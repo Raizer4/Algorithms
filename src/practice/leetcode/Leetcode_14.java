@@ -3,12 +3,9 @@ package practice.leetcode;
 // Longest Common Prefix
 // https://leetcode.com/problems/longest-common-prefix/description/
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
-public class Leetcode_14 {
+public class  Leetcode_14 {
 
     public static void main(String[] args) {
         System.out.println(longestCommonPrefix(new String[]{"flower","flow","flight"}));
@@ -20,39 +17,23 @@ public class Leetcode_14 {
     }
 
     public static String longestCommonPrefix(String[] strs) {
-        List<String> list = Arrays.asList(strs);
+        StringBuilder ans = new StringBuilder();
 
-        if (list.contains("")) {
-            return "";
-        }
+        Arrays.sort(strs);
 
-        int size = Collections.min(list, Comparator.comparingInt(String::length)).length();
+        String first = strs[0];
+        String last = strs[strs.length-1];
 
-        int count = 0;
+        for (int i = 0; i < Math.min(first.length(), last.length()); i++) {
 
-        while (true) {
-            String str = strs[0];
-
-            char c = str.charAt(count);
-            boolean flag = true;
-
-            for (int j = 0; j < strs.length; j++) {
-                if (strs[j].charAt(count) != c) {
-                    flag = false;
-                }
+            if (first.charAt(i) != last.charAt(i)) {
+                return ans.toString();
             }
 
-            if (flag) {
-                count++;
-                if (count >= size) {
-                    return str.substring(0, count);
-                }
-            } else {
-                return str.substring(0, count);
-            }
+            ans.append(first.charAt(i));
         }
 
-
+        return ans.toString();
     }
 
 }

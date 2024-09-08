@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.trash;
 
 // Sqrt(x)
 // https://leetcode.com/problems/sqrtx/description/

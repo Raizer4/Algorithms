@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.array;
 
 // Merge Sorted Array
 // https://leetcode.com/problems/merge-sorted-array/description/
@@ -14,10 +14,11 @@ public class Leetcode_88 {
     }
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        for (int i = m, j = 0; i < nums1.length; i++, j++){
+        int j = 0;
+        for (int i = m; i < nums1.length; i++){
             nums1[i] = nums2[j];
+            j++;
         }
-
         Arrays.sort(nums1);
     }
 

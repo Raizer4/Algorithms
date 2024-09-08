@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.math;
 
 // Palindrome Number
 // https://leetcode.com/problems/palindrome-number/description/

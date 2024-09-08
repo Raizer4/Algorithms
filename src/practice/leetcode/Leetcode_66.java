@@ -3,7 +3,6 @@ package practice.leetcode;
 // Plus One
 // https://leetcode.com/problems/plus-one/description/
 
-import java.math.BigInteger;
 
 public class Leetcode_66 {
 
@@ -18,26 +17,19 @@ public class Leetcode_66 {
     }
 
     public static int[] plusOne(int[] digits) {
-        StringBuilder builder = new StringBuilder();
 
-        for (int i = 0; i < digits.length; i++) {
-            builder.append(digits[i]);
+        for (int i = digits.length - 1; i >= 0; i--) {
+            if (digits[i] < 9) {
+                digits[i]++;
+                return digits;
+            }
+
+            digits[i] = 0;
         }
 
-        BigInteger anInt = new BigInteger(builder.toString());
-        anInt = anInt.add(BigInteger.ONE);
-
-        builder = new StringBuilder(String.valueOf(anInt));
-
-        char[] array = builder.toString().toCharArray();
-        int[] result = new int[array.length];
-        int i = 0;
-        for (char temp : array){
-            result[i] = Integer.parseInt(String.valueOf(temp));
-            i++;
-        }
-
-        return result;
+        digits = new int[digits.length + 1];
+        digits[0] = 1;
+        return digits;
     }
 
 }

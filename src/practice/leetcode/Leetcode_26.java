@@ -15,10 +15,9 @@ public class Leetcode_26 {
 
     public static int removeDuplicates(int[] nums) {
         List<Integer> list = new ArrayList<>();
-
         int k = 0;
 
-        for (int i = 0; i < nums.length; i++){
+        for (int i = 0; i < nums.length;i++){
             int temp = nums[i];
             if (!list.contains(temp)){
                 nums[k] = temp;

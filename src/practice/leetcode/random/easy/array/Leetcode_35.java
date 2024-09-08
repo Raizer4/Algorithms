@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.array;
 
 // Search Insert Position
 // https://leetcode.com/problems/search-insert-position/description/
@@ -12,10 +12,9 @@ public class Leetcode_35 {
     }
 
     public static int searchInsert(int[] nums, int target) {
-
-        for (int i = 0; i < nums.length; i++){
-            if (nums[i] == target || nums[i] > target){
-                return i;   
+        for (int i = 0; i < nums.length;i++){
+            if (nums[i] >= target){
+                return i;
             }
         }
 
