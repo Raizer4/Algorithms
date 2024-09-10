@@ -3,11 +3,10 @@ package practice.leetcode.tree;
 // Binary Tree Inorder Traversal
 // https://leetcode.com/problems/binary-tree-inorder-traversal/description/?envType=problem-list-v2&envId=tree&difficulty=EASY
 
-import practice.leetcode.linkedList.Leetcode_234;
+
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class Leetcode_94 {
 
@@ -36,24 +35,18 @@ public class Leetcode_94 {
     }
 
     public static List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        Stack<TreeNode> stack = new Stack<>();
-
-        TreeNode current = root;
-
-        while(current != null || !stack.empty()){
-            while(current != null){
-                stack.push(current);
-                current = current.left;
-            }
-
-            TreeNode pop = stack.pop();
-            list.add(pop.val);
-            current = pop.right;
-        }
-
-        return list;
+        ArrayList<Integer> res = new ArrayList<>();
+        inorder(root,res);
+        return res;
     }
 
+    private static void inorder(TreeNode node, List<Integer> res){
+        if (node == null){
+            return;
+        }
+        inorder(node.left,res);
+        res.add(node.val);
+        inorder(node.right,res);
+    }
 
 }
