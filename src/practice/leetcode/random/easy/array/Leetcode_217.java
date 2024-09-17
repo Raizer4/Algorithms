@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.array;
 
 // Contains Duplicate
 // https://leetcode.com/problems/contains-duplicate/description/

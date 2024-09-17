@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.string;
 
 // Longest Common Prefix
 // https://leetcode.com/problems/longest-common-prefix/description/

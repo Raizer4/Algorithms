@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.array;
 
 // Remove Element
 // https://leetcode.com/problems/remove-element/description/

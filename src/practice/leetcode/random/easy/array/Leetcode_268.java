@@ -1,9 +1,10 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.array;
 
 // Missing Number
 // https://leetcode.com/problems/missing-number/description/
 
-import java.util.TreeSet;
+import java.util.Arrays;
+
 
 public class Leetcode_268 {
 
@@ -14,23 +15,15 @@ public class Leetcode_268 {
     }
 
     public static int missingNumber(int[] nums) {
-        TreeSet<Integer> set = new TreeSet<>();
+        Arrays.sort(nums);
 
-        for (int temp : nums){
-            set.add(temp);
-        }
-
-        int k = 0;
-
-        for (Integer temp : set){
-            if (temp == k){
-                k++;
-            } else {
-                return k;
+        for (int i = 0; i < nums[nums.length-1]; i++){
+            if (nums[i] != i){
+                return i;
             }
         }
 
-        return set.last() + 1;
+        return nums[nums.length - 1] + 1;
     }
 
 }

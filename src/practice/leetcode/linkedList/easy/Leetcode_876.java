@@ -1,4 +1,4 @@
-package practice.leetcode.linkedList;
+package practice.leetcode.linkedList.easy;
 
 // Middle of the Linked List
 // https://leetcode.com/problems/middle-of-the-linked-list/description/?envType=problem-list-v2&envId=linked-list&difficulty=EASY
@@ -38,33 +38,15 @@ public class Leetcode_876 {
     }
 
     public static ListNode middleNode(ListNode head) {
-        ListNode current = head;
-        int count = 0;
+        ListNode fast = head;
+        ListNode slow = head;
 
-        while(current != null){
-            count++;
-            current = current.next;
+        while (fast != null && fast.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
         }
 
-        int middle;
-
-        if (count % 2 == 0){
-            middle = (count + 1) / 2;
-        }else {
-            middle = (int) Math.ceil(count/2);
-        }
-
-        int k = 0;
-
-        while (head != null){
-            if (middle == k){
-                return head;
-            }
-            k++;
-            head = head.next;
-        }
-
-        return null;
+        return slow;
     }
 
 }

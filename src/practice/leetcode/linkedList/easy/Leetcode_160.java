@@ -1,4 +1,4 @@
-package practice.leetcode.linkedList;
+package practice.leetcode.linkedList.easy;
 
 // Intersection of Two Linked Lists
 // https://leetcode.com/problems/intersection-of-two-linked-lists/description/?envType=problem-list-v2&envId=linked-list&difficulty=EASY
@@ -27,9 +27,9 @@ public class Leetcode_160 {
     }
 
     public static ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode temp;
+        ListNode temp = null;
 
-        while (headA != null){
+        while(headA != null){
             temp = headB;
 
             while(temp != null){
@@ -40,7 +40,9 @@ public class Leetcode_160 {
             }
             headA = headA.next;
         }
+
         return null;
+
     }
 
 }

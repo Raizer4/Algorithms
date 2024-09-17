@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.stack;
 
 // Valid Parentheses
 // https://leetcode.com/problems/valid-parentheses/description/

@@ -1,4 +1,4 @@
-package practice.leetcode.linkedList;
+package practice.leetcode.linkedList.easy;
 
 // Remove Duplicates from Sorted List
 // https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
@@ -32,19 +32,17 @@ public class Leetcode_83 {
     }
 
     public static ListNode deleteDuplicates(ListNode head) {
-        ListNode current = head;
+      ListNode currency = head;
 
-        while (current != null && current.next != null){
-
-            if (current.val == current.next.val){
-                current.next = current.next.next;
-            }else {
-                current = current.next;
-            }
-
+      while(currency != null && currency.next != null){
+        if (currency.val == currency.next.val){
+            currency.next = currency.next.next;
+        }else {
+            currency = currency.next;
         }
+      }
 
-        return head;
+      return head;
     }
 
 

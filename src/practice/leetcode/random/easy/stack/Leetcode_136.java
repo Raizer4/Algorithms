@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.stack;
 
 // Single Number
 // https://leetcode.com/problems/single-number/description/

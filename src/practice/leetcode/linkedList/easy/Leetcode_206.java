@@ -1,4 +1,4 @@
-package practice.leetcode.linkedList;
+package practice.leetcode.linkedList.easy;
 
 // Reverse Linked List
 // https://leetcode.com/problems/reverse-linked-list/description/
@@ -34,18 +34,18 @@ public class Leetcode_206 {
     }
 
     public static ListNode reverseList(ListNode head) {
-       ListNode prev = null;
-       ListNode next = null;
-       ListNode current = head;
+        ListNode next = null;
+        ListNode prev = null;
+        ListNode currency = head;
 
-       while (current != null){
-           next = current.next;
-           current.next = prev;
-           prev = current;
-           current = next;
-       }
+        while(currency != null){
+            next = currency.next;
+            currency.next = prev;
+            prev = currency;
+            currency = next;
+        }
 
-       return prev;
+        return prev;
     }
 
 }

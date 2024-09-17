@@ -1,4 +1,4 @@
-package practice.leetcode.linkedList;
+package practice.leetcode.linkedList.easy;
 
 // Remove Linked List Elements
 // https://leetcode.com/problems/remove-linked-list-elements/description/?envType=problem-list-v2&envId=linked-list&difficulty=EASY
@@ -35,24 +35,22 @@ public class Leetcode_203 {
 
 
     public static ListNode removeElements(ListNode head, int val) {
-        while(head != null && head.val == val){
-            head = head.next;
-        }
+       while(head != null && head.val == val){
+           head = head.next;
+       }
 
-        ListNode current = head;
+       ListNode currency = head;
 
-        while (current != null && current.next != null){
+       while (currency != null && currency.next != null){
+           if (currency.next.val == val){
+               currency.next = currency.next.next;
+           }else {
+               currency = currency.next;
+           }
+       }
 
-            if (current.next.val == val){
-                current.next = current.next.next;
-            }else {
-                current = current.next;
-            }
 
-        }
-
-        return head;
-
+       return head;
     }
 
 

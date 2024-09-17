@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.string;
 
 // Valid Palindrome
 // https://leetcode.com/problems/valid-palindrome/description/

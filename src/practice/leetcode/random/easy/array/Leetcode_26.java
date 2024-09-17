@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.array;
 
 // Remove Duplicates from Sorted Array
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/

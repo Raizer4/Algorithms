@@ -1,4 +1,4 @@
-package practice.leetcode.linkedList;
+package practice.leetcode.linkedList.easy;
 
 // Linked List Cycle
 // https://leetcode.com/problems/linked-list-cycle/description/?envType=problem-list-v2&envId=linked-list&difficulty=EASY
@@ -28,7 +28,7 @@ public class Leetcode_141 {
        ListNode fast = head;
        ListNode slow = head;
 
-       while(fast != null && fast.next != null){
+       while (fast != null && fast.next != null){
            fast = fast.next.next;
            slow = slow.next;
 
@@ -36,9 +36,7 @@ public class Leetcode_141 {
                return true;
            }
        }
-
-        return false;
-
+       return false;
     }
 
 }
