@@ -7,6 +7,7 @@ package practice.leetcode.tree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class Leetcode_94 {
 
@@ -35,18 +36,26 @@ public class Leetcode_94 {
     }
 
     public static List<Integer> inorderTraversal(TreeNode root) {
-        ArrayList<Integer> res = new ArrayList<>();
-        inorder(root,res);
-        return res;
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode currency = root;
+        List<Integer> list = new ArrayList<>();
+
+        while (currency != null || !stack.empty()){
+            while (currency != null){
+                stack.push(currency);
+                currency = currency.left;
+            }
+
+            currency = stack.pop();
+            list.add(currency.val);
+            currency = currency.right;
+        }
+
+
+        return list;
+
+
     }
 
-    private static void inorder(TreeNode node, List<Integer> res){
-        if (node == null){
-            return;
-        }
-        inorder(node.left,res);
-        res.add(node.val);
-        inorder(node.right,res);
-    }
 
 }

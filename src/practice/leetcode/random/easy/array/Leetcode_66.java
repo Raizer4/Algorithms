@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.random.easy.array;
 
 // Plus One
 // https://leetcode.com/problems/plus-one/description/
@@ -17,7 +17,6 @@ public class Leetcode_66 {
     }
 
     public static int[] plusOne(int[] digits) {
-
         for (int i = digits.length - 1; i >= 0; i--) {
             if (digits[i] < 9) {
                 digits[i]++;
