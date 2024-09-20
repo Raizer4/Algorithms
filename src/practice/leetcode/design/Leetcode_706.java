@@ -8,23 +8,21 @@ import java.util.LinkedList;
 public class Leetcode_706 {
 
     static class MyHashMap {
-        private static final int INITIAL_CAPACITY = 16;
-        private LinkedList<Entry>[]buckets;
+        private static final Integer MAX_VALUE = 16;
+        LinkedList<Entry>[] buckets;
 
-        private static class Entry{
+        public class Entry {
             Integer key;
             Integer value;
 
-            public Entry(Integer key, Integer value){
+            public Entry(Integer key, Integer value) {
                 this.key = key;
                 this.value = value;
             }
-
         }
 
-
         public MyHashMap() {
-            buckets = new LinkedList[INITIAL_CAPACITY];
+            buckets = new LinkedList[MAX_VALUE];
         }
 
         public void put(int key, int value) {
@@ -32,14 +30,14 @@ public class Leetcode_706 {
 
             LinkedList<Entry> bucket = buckets[bucketIndex];
 
-            if (bucket == null) {
-                bucket = new LinkedList<>();
-                buckets[bucketIndex] = bucket;
+            if (bucket == null){
+               bucket = new LinkedList<>();
+               buckets[bucketIndex] = bucket;
             }
 
-            for (Entry temp : bucket){
-                if (temp.key.equals(key)){
-                    temp.value = value;
+            for (Entry entry : bucket) {
+                if (entry.key.equals(key)){
+                    entry.value = value;
                     return;
                 }
             }
@@ -49,13 +47,14 @@ public class Leetcode_706 {
 
         public int get(int key) {
             int bucketIndex = getBucketIndex(key);
+            LinkedList<Entry> bucket = buckets[bucketIndex];
 
-            if (buckets[bucketIndex] == null){
+            if (bucket == null){
                 return -1;
             }
 
-            for (Entry entry : buckets[bucketIndex]) {
-                if (entry.key.equals(key)){
+            for (Entry entry : bucket){
+                if (entry.key == key){
                     return entry.value;
                 }
             }
@@ -68,12 +67,11 @@ public class Leetcode_706 {
             LinkedList<Entry> bucket = buckets[bucketIndex];
 
             if (bucket != null){
-                bucket.removeIf(entry -> entry.key.equals(key));
+              bucket.removeIf(entry -> entry.key.equals(key));
             }
-
         }
 
-        private int getBucketIndex(Integer key) {
+        private int getBucketIndex(Integer key){
             return Math.abs(key.hashCode()) % buckets.length;
         }
 

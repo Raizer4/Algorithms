@@ -36,25 +36,17 @@ public class Leetcode_94 {
     }
 
     public static List<Integer> inorderTraversal(TreeNode root) {
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode currency = root;
         List<Integer> list = new ArrayList<>();
-
-        while (currency != null || !stack.empty()){
-            while (currency != null){
-                stack.push(currency);
-                currency = currency.left;
-            }
-
-            currency = stack.pop();
-            list.add(currency.val);
-            currency = currency.right;
-        }
-
-
+        inorderRec(root,list);
         return list;
+    }
 
-
+    private static void inorderRec(TreeNode root, List<Integer> list){
+        if (root != null){
+            inorderRec(root.left,list);
+            list.add(root.val);
+            inorderRec(root.right,list);
+        }
     }
 
 
