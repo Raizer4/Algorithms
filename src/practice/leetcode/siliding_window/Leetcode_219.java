@@ -1,10 +1,11 @@
-package practice.leetcode;
+package practice.leetcode.siliding_window;
 
 // Contains Duplicate II
 // https://leetcode.com/problems/contains-duplicate-ii/description/
 
-import java.util.HashMap;
 
+import java.util.HashSet;
+import java.util.Set;
 
 public class Leetcode_219 {
 
@@ -15,25 +16,22 @@ public class Leetcode_219 {
     }
 
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
-        HashMap<Integer,Integer> map = new HashMap<>();
+        Set<Integer> window = new HashSet<>();
 
         for (int i = 0; i < nums.length; i++) {
-            if (map.containsKey(nums[i])){
-                Integer integer = map.get(nums[i]);
 
-                if ((i - integer) <= k){
-                    return true;
-                }
+            if (window.contains(nums[i])) {
+                return true;
             }
 
-            map.put(nums[i], i);
+            window.add(nums[i]);
+
+            if (window.size() > k) {
+                window.remove(nums[i - k]);
+            }
         }
 
         return false;
     }
-
-
-
-
 
 }

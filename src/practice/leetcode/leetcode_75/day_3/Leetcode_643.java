@@ -12,22 +12,20 @@ public class Leetcode_643 {
     }
 
     public static double findMaxAverage(int[] nums, int k) {
-        double maxSum = 0;
+        double max = 0;
 
-        for (int i = 0; i < k; i++) {
-            maxSum += nums[i];
+        for (int i = 0 ; i < k; i++){
+            max += nums[i];
         }
 
-        double currentSum = maxSum;
+        double current = max;
 
-
-        for (int i = k; i < nums.length; i++) {
-            currentSum += nums[i] - nums[i - k];
-            maxSum = Math.max(maxSum, currentSum);
+        for(int i = k; i < nums.length; i++){
+            current += nums[i] - nums[i - k];
+            max = Math.max(max,current);
         }
 
-
-        return maxSum / k;
+        return max / k;
     }
 
 }
