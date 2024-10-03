@@ -36,18 +36,18 @@ public class Leetcode_94 {
     }
 
     public static List<Integer> inorderTraversal(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
-        inorderRec(root,list);
-        return list;
+       List<Integer> list = new ArrayList<>();
+       recursiya(root,list);
+       return list;
     }
 
-    private static void inorderRec(TreeNode root, List<Integer> list){
-        if (root != null){
-            inorderRec(root.left,list);
-            list.add(root.val);
-            inorderRec(root.right,list);
+    private static void recursiya(TreeNode treeNode, List<Integer> list){
+        if (treeNode == null){
+            return;
         }
+        recursiya(treeNode.left,list);
+        list.add(treeNode.val);
+        recursiya(treeNode.right,list);
     }
-
 
 }
