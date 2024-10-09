@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.hash_table.easy;
 
 // Happy Number
 // https://leetcode.com/problems/happy-number/description/?envType=problem-list-v2&envId=hash-table&difficulty=EASY

@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.math.easy;
 
 // Power of Two
 // https://leetcode.com/problems/power-of-two/description/
@@ -11,18 +11,11 @@ public class Leetcode_231 {
     }
 
     public static boolean isPowerOfTwo(int n) {
-        if (n == 1){
-            return true;
+        while (n % 2 == 0  && n != 1 && n != 0){
+            n /= 2;
         }
 
-        while (n > 3){
-            if (n%2!=0) {
-                return false;
-            }
-            n = n/2;
-        }
-
-        return n == 2;
+        return n == 1;
     }
 
 }
