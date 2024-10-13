@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.two_pointers.easy;
 
 // Sort Array By Parity
 // https://leetcode.com/problems/sort-array-by-parity/description/
