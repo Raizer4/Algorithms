@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.array.easy;
 
 // Number of Arithmetic Triplets
 // https://leetcode.com/problems/number-of-arithmetic-triplets/description/

@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.array.easy;
 
 // Count Number of Pairs With Absolute Difference K
 // https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/description/

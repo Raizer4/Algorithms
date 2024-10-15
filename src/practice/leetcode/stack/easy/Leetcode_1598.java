@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.stack.easy;
 
 // Crawler Log Folder
 // https://leetcode.com/problems/crawler-log-folder/description/

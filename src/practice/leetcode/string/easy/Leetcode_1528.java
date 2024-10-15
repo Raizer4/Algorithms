@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.string.easy;
 
 // Shuffle String
 // https://leetcode.com/problems/shuffle-string/description/

@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.string.easy;
 
 // Minimum String Length After Removing Substrings
 // https://leetcode.com/problems/minimum-string-length-after-removing-substrings/description/

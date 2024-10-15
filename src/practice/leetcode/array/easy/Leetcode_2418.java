@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.array.easy;
 
 // Sort the People
 // https://leetcode.com/problems/sort-the-people/description/
@@ -21,7 +21,7 @@ public class Leetcode_2418 {
             list.add(new Person(names[i],heights[i]));
         }
 
-         Collections.sort(list,(a,b) -> b.heights - a.heights);
+        Collections.sort(list,(a,b) -> b.heights - a.heights);
 
         String[] strings = new String[names.length];
 

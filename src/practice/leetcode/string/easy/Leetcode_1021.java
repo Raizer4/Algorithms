@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.string.easy;
 
 // Remove Outermost Parentheses
 // https://leetcode.com/problems/remove-outermost-parentheses/description/
