@@ -1,4 +1,4 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_1;
 
 // Merge Strings Alternately
 // https://leetcode.com/problems/merge-strings-alternately/description/?envType=study-plan-v2&envId=leetcode-75
@@ -13,23 +13,19 @@ public class Leetcode_1768 {
 
     public static String mergeAlternately(String word1, String word2) {
         StringBuilder builder = new StringBuilder();
-        int i = 0;
-        int j = 0;
 
-        while (i < word1.length() && j < word2.length()){
-            if (i <= j){
-                builder.append(word1.charAt(i));
-                i++;
-            }else {
-                builder.append(word2.charAt(j));
-                j++;
-            }
+        int i = 0;
+
+        while (i < Math.min(word1.length(),word2.length())){
+            builder.append(word1.charAt(i));
+            builder.append(word2.charAt(i));
+            i++;
         }
 
         if (i != word1.length()){
             builder.append(word1.substring(i,word1.length()));
-        }else if (j != word2.length()){
-            builder.append(word2.substring(j,word2.length()));
+        }else if (i != word2.length()){
+            builder.append(word2.substring(i,word2.length()));
         }
 
         return builder.toString();
