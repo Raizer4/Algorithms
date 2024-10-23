@@ -1,4 +1,4 @@
-package practice.leetcode.array.easy;
+package practice.leetcode.leetcode_75.decision.day_3;
 
 // Kids With the Greatest Number of Candies
 // https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/

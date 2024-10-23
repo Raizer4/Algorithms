@@ -3,9 +3,6 @@ package practice.leetcode.leetcode_75.decision.day_2;
 // Greatest Common Divisor of Strings
 // https://leetcode.com/problems/greatest-common-divisor-of-strings/description/?envType=study-plan-v2&envId=leetcode-75
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Leetcode_1071 {
 
     public static void main(String[] args) {
