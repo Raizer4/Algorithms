@@ -1,13 +1,14 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_9;
 
 // String Compression
 // https://leetcode.com/problems/string-compression/description/?envType=study-plan-v2&envId=leetcode-75
 
 
+
 public class Leetcode_443 {
 
     public static void main(String[] args) {
-        System.out.println(compress(new char[]{'a', 'a', 'b', 'b', 'c', 'c', 'c', 'c'}));
+        System.out.println(compress(new char[]{'a', 'a', 'b', 'b', 'c', 'c','c'}));
         System.out.println(compress(new char[]{'a'}));
     }
 
@@ -19,15 +20,12 @@ public class Leetcode_443 {
             char currentChar = chars[i];
             int count = 0;
 
-
             while (i < chars.length && chars[i] == currentChar) {
                 i++;
                 count++;
             }
 
-
             chars[write++] = currentChar;
-
 
             if (count > 1) {
                 for (char c : Integer.toString(count).toCharArray()) {
