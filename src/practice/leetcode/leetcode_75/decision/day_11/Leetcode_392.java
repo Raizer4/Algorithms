@@ -1,4 +1,4 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_11;
 
 // Is Subsequence
 // https://leetcode.com/problems/is-subsequence/description/?envType=study-plan-v2&envId=leetcode-75
@@ -14,14 +14,14 @@ public class Leetcode_392 {
         int i = 0;
         int j = 0;
 
-        while (i < s.length() && j < t.length()){
+        while (j < t.length() && i < s.length()){
             if (s.charAt(i) == t.charAt(j)){
                 i++;
             }
             j++;
         }
 
-        return i == s.length();
+        return i >= s.length();
     }
 
 
