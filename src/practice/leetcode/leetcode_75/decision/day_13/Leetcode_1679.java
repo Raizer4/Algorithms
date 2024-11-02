@@ -1,10 +1,9 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_13;
 
 // Max Number of K-Sum Pairs
 // https://leetcode.com/problems/max-number-of-k-sum-pairs/description/?envType=study-plan-v2&envId=leetcode-75
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Leetcode_1679 {
 
@@ -14,20 +13,29 @@ public class Leetcode_1679 {
     }
 
     public static int maxOperations(int[] nums, int k) {
-        Map<Integer, Integer> map = new HashMap<>();
+        int i = 0;
+        int j = nums.length - 1;
         int count = 0;
 
-        for (int num : nums) {
-            int complement = k - num;
-            if (map.getOrDefault(complement, 0) > 0) {
+        Arrays.sort(nums);
+
+        while (i < j){
+            int sum = nums[i] + nums[j];
+
+            if (sum == k){
                 count++;
-                map.put(complement, map.get(complement) - 1);
-            } else {
-                map.put(num, map.getOrDefault(num, 0) + 1);
+                i++;
+                j--;
+            }else if (sum < k){
+               i++;
+            }else {
+                j--;
             }
+
         }
 
         return count;
-
     }
+
+
 }

@@ -1,14 +1,17 @@
 package practice.leetcode.leetcode_75.decision.day_12.similar;
 
+// Find the Array Concatenation Value
+// https://leetcode.com/problems/find-the-array-concatenation-value/description/
+
 public class Leetcode_2562 {
 
     public static void main(String[] args) {
         System.out.println(findTheArrayConcVal(new int[]{5,14,13,8,12}));
-        System.out.println(findTheArrayConcVal(new int[]{7,52,2,4}));
+        System.out.println(findTheArrayConcVal(new int[]{5,14,13,8,12}));
     }
 
     public static long findTheArrayConcVal(int[] nums) {
-        int sum = 0;
+        long sum = 0;
         String concat = "";
 
         int i = 0;
