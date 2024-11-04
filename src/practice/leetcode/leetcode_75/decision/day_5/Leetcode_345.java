@@ -15,15 +15,15 @@ public class Leetcode_345 {
         char[] chars = s.toCharArray();
         int i = 0;
         int j = s.length() - 1;
-        String alf = "aouieAOUIE";
+        String vowels = "aeiouAEIOU";
+
 
         while (i < j){
-
-            while (i < j && alf.indexOf(s.charAt(i)) == -1){
+            while (vowels.indexOf(chars[i]) == -1){
                 i++;
             }
 
-            while (i < j && alf.indexOf(s.charAt(j)) == -1){
+            while (vowels.indexOf(chars[j]) == -1){
                 j--;
             }
 
@@ -34,6 +34,7 @@ public class Leetcode_345 {
             i++;
             j--;
         }
+
 
         return new String(chars);
     }
