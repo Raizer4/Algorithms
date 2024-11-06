@@ -15,7 +15,6 @@ public class Leetcode_1004 {
         int j = 0;
         int size = 0;
 
-
         for (int i = 0; i < nums.length; i++) {
 
             if (nums[i] == 0) {
