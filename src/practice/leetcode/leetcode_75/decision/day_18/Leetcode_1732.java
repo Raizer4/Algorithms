@@ -1,4 +1,4 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_18;
 
 // Find the Highest Altitude
 // https://leetcode.com/problems/find-the-highest-altitude/description/?envType=study-plan-v2&envId=leetcode-75
@@ -11,18 +11,12 @@ public class Leetcode_1732 {
     }
 
     public static int largestAltitude(int[] gain) {
-        int[] brr = new int[gain.length + 1];
-        brr[0] = 0;
-        brr[1] = brr[0] + gain[0];
+        int max = 0;
+        int count = 0;
 
-        for (int i = 2; i < brr.length; i++) {
-            brr[i] = brr[i - 1] + gain[i - 1];
-        }
-
-        int max = Integer.MIN_VALUE;
-
-        for (int i = 0; i < brr.length; i++) {
-            max = Math.max(brr[i], max);
+        for (int temp : gain){
+            count += temp;
+            max = Math.max(max,count);
         }
 
         return max;
