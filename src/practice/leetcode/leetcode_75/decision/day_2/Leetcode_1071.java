@@ -17,9 +17,10 @@ public class Leetcode_1071 {
             return "";
         }
 
-        int gcd = gcd(str1.length(), str2.length());
+       int gcd = gcd(str1.length(),str2.length());
 
-        return str1.substring(0,gcd);
+
+       return str1.substring(0,gcd);
     }
 
     private static int gcd(int a, int b){

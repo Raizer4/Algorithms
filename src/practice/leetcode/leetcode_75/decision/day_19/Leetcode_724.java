@@ -1,4 +1,4 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_19;
 
 // Find the Highest Altitude
 // https://leetcode.com/problems/find-the-highest-altitude/description/?envType=study-plan-v2&envId=leetcode-75
@@ -13,22 +13,7 @@ public class Leetcode_724 {
     }
 
     public static int pivotIndex(int[] nums) {
-        int count = 0;
-        for (int temp : nums){
-            count += temp;
-        }
-        int sum = 0;
-
-        for (int i = 0; i < nums.length; i++){
-
-            if (sum == count - sum - nums[i]){
-                return i;
-            }
-
-            sum += nums[i];
-        }
-
-        return -1;
+       return 0;
     }
 
 }
