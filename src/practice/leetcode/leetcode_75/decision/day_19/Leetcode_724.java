@@ -13,7 +13,24 @@ public class Leetcode_724 {
     }
 
     public static int pivotIndex(int[] nums) {
-       return 0;
+        int sum = 0;
+
+        for (int temp : nums){
+            sum += temp;
+        }
+
+        int left = 0;
+
+        for (int i = 0; i < nums.length; i++){
+            left += nums[i];
+            int right = sum - left + nums[i];
+
+            if (right == left){
+                return i;
+            }
+        }
+
+        return -1;
     }
 
 }
