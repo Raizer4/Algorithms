@@ -1,12 +1,9 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_21;
 
 // Unique Number of Occurrences
 // https://leetcode.com/problems/unique-number-of-occurrences/description/?envType=study-plan-v2&envId=leetcode-75
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Leetcode_1207 {
 
@@ -17,23 +14,19 @@ public class Leetcode_1207 {
     }
 
     public static boolean uniqueOccurrences(int[] arr) {
-        Map<Integer,Integer> map = new HashMap<>();
+        HashMap<Integer,Integer> map = new HashMap<>();
 
-        for (int i = 0; i < arr.length; i++){
-            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+        for (int temp : arr){
+            map.put(temp,map.getOrDefault(temp,0) + 1);
         }
 
-        List<Integer> temp = new ArrayList<>();
+        Set<Integer> set = new TreeSet<>();
 
-        for (Integer key : map.values()){
-            if (!temp.contains(key)){
-                temp.add(key);
-            }else {
-                return false;
-            }
+        for (int temp : map.values()){
+            set.add(temp);
         }
 
-        return true;
+        return set.size() == map.values().size();
     }
 
 

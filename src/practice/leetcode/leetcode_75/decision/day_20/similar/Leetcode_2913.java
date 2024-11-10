@@ -19,21 +19,17 @@ public class Leetcode_2913 {
     }
 
     public static int sumCounts(List<Integer> nums) {
-        int totalSum = 0;
-        int n = nums.size();
+        int sum = 0;
 
-        for (int i = 0; i < n; i++) {
-            Set<Integer> uniqueValues = new HashSet<>();
-
-            for (int j = i; j < n; j++) {
-                uniqueValues.add(nums.get(j));
-                int distinctCount = uniqueValues.size();
-                totalSum += distinctCount * distinctCount;
+        for (int i = 0; i < nums.size(); i++){
+            Set<Integer> set = new TreeSet<>();
+            for (int j = i; j < nums.size(); j++) {
+                set.add(nums.get(j));
+                sum += Math.pow(set.size(),2);
             }
-
         }
 
-        return totalSum;
+        return sum;
     }
 
 
