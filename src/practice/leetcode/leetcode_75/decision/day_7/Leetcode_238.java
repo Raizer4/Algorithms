@@ -4,6 +4,9 @@ package practice.leetcode.leetcode_75.decision.day_7;
 // https://leetcode.com/problems/product-of-array-except-self/description/?envType=study-plan-v2&envId=leetcode-75
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Leetcode_238 {
 
     public static void main(String[] args) {
@@ -16,28 +19,22 @@ public class Leetcode_238 {
     }
 
     public static int[] productExceptSelf(int[] nums) {
-        int n = nums.length;
-        int[] result = new int[n];
+        int[] res = new int[nums.length];
 
+        int left = 1;
 
-        result[0] = 1;
-
-        for (int i = 1; i < n; i++) {
-            result[i] = result[i - 1] * nums[i - 1];
+        for (int i = 0; i < nums.length; i++) {
+            res[i] = left;
+            left *= nums[i];
         }
 
-
-        int rightProduct = 1;
-
-        for (int i = n - 1; i >= 0; i--) {
-            result[i] = result[i] * rightProduct;
-            rightProduct *= nums[i];
+        int right = 1;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            res[i] *= right;
+            right *= nums[i];
         }
 
-        return result;
+        return res;
     }
-
-
-
 
 }

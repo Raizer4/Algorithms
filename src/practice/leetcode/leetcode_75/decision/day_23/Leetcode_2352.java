@@ -1,7 +1,9 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_23;
 
 // Equal Row and Column Pairs
 // https://leetcode.com/problems/equal-row-and-column-pairs/description/?envType=study-plan-v2&envId=leetcode-75
+
+import java.util.Arrays;
 
 public class Leetcode_2352 {
 
@@ -24,29 +26,42 @@ public class Leetcode_2352 {
     }
 
     public static int equalPairs(int[][] grid) {
-        int n = grid.length;
+        int count = 0;
+        int i = 0;
+        int j = 0;
+
+        while (i < grid.length){
+           int[] temp = new int[grid.length];
+           int index = 0;
+
+            for (int[] arr : grid){
+              temp[index++] = arr[j];
+            }
+
+            int check = check(grid, temp);
+
+            if (check != 0){
+                count += check;
+            }
+
+            j++;
+            i++;
+        }
+
+        return count;
+    }
+
+    private static int check(int[][] res, int [] temp){
         int count = 0;
 
-        for (int i = 0; i < n; i++) {
-
-            for (int j = 0; j < n; j++) {
-                boolean isEqual = true;
-
-                for (int k = 0; k < n; k++) {
-                    if (grid[i][k] != grid[k][j]) {
-                        isEqual = false;
-                        break;
-                    }
-                }
-
-                if (isEqual) {
-                    count++;
-                }
-
+        for (int[] ints : res){
+            if (Arrays.equals(ints, temp)){
+                count++;
             }
         }
 
         return count;
     }
+
 
 }
