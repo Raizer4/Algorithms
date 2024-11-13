@@ -3,10 +3,6 @@ package practice.leetcode.leetcode_75.decision.day_7;
 // Product of Array Except Self
 // https://leetcode.com/problems/product-of-array-except-self/description/?envType=study-plan-v2&envId=leetcode-75
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class Leetcode_238 {
 
     public static void main(String[] args) {
@@ -19,22 +15,22 @@ public class Leetcode_238 {
     }
 
     public static int[] productExceptSelf(int[] nums) {
-        int[] res = new int[nums.length];
-
-        int left = 1;
-
-        for (int i = 0; i < nums.length; i++) {
-            res[i] = left;
-            left *= nums[i];
-        }
-
+        int[] ints = new int[nums.length];
         int right = 1;
-        for (int i = nums.length - 1; i >= 0; i--) {
-            res[i] *= right;
+
+        for (int i = 0; i < nums.length; i++){
+            ints[i] = right;
             right *= nums[i];
         }
 
-        return res;
+        int left = 1;
+
+       for (int i = nums.length - 1; i >= 0; i--){
+            ints[i] = ints[i] * left;
+            left *= nums[i];
+       }
+
+       return ints;
     }
 
 }
