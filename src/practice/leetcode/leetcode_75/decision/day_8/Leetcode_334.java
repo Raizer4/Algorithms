@@ -13,19 +13,20 @@ public class Leetcode_334 {
     }
 
     public static boolean increasingTriplet(int[] nums) {
-        int first = Integer.MAX_VALUE;
-        int second = Integer.MAX_VALUE;
+       Integer max_1 = Integer.MAX_VALUE;
+       Integer max_2 = Integer.MAX_VALUE;
 
-        for (int num : nums) {
-            if (num <= first) {
-                first = num;
-            } else if (num <= second) {
-                second = num;
-            } else {
-                return true;
-            }
-        }
-        return false;
+       for(int temp : nums){
+           if (max_1 > temp){
+               max_1 = temp;
+           }else if (max_2 > temp){
+               max_2 = temp;
+           }else {
+               return true;
+           }
+       }
+
+       return false;
     }
 
 }
