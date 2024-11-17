@@ -1,4 +1,4 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_28;
 
 // Dota2 Senate
 // https://leetcode.com/problems/dota2-senate/description/?envType=study-plan-v2&envId=leetcode-75
@@ -42,7 +42,6 @@ public class Leetcode_649 {
 
 
         return radiant.isEmpty() ? "Dire" : "Radiant";
-
     }
 
 }

@@ -1,18 +1,18 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_27;
 
 // Number of Recent Calls
 // https://leetcode.com/problems/number-of-recent-calls/description/?envType=study-plan-v2&envId=leetcode-75
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Leetcode_933 {
 
     static class RecentCounter {
+
         Queue<Integer> queue;
 
         public RecentCounter() {
-          queue = new LinkedList<>();
+            queue = new LinkedList<>();
         }
 
         public int ping(int t) {
