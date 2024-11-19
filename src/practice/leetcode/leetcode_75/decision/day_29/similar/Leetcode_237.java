@@ -12,10 +12,10 @@ public class Leetcode_237 {
   }
 
     public static void main(String[] args) {
-
+        deleteNode(new ListNode(1).next = new ListNode(5));
     }
 
-    public void deleteNode(ListNode node) {
+    public static void deleteNode(ListNode node) {
         node.val = node.next.val;
         node = node.next.next;
     }
