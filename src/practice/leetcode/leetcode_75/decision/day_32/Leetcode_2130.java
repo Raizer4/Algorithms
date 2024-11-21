@@ -1,4 +1,4 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_32;
 
 // Maximum Twin Sum of a Linked List
 // https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/?envType=study-plan-v2&envId=leetcode-75
@@ -32,21 +32,23 @@ public class Leetcode_2130 {
     public static int pairSum(ListNode head) {
         List<Integer> list = new ArrayList<>();
 
-        while (head != null){
-            list.add(head.val);
-            head = head.next;
+        ListNode current = head;
+
+        while (current != null){
+            list.add(current.val);
+            current = current.next;
         }
 
-        int max = 0;
-        int n = list.size();
+        int i = 0;
+        int j = list.size() - 1;
 
-        for (int i = 0; i < list.size(); i++) {
-            if (i >= (n / 2) - 1){
-                int temp = list.get(i) + list.get(n - 1 - i);
-                if (max < temp){
-                    max = temp;
-                }
-            }
+        int max = 0;
+
+        while (i < j){
+            int temp = list.get(i) + list.get(j);
+            max = Math.max(max,temp);
+            i++;
+            j--;
         }
 
         return max;
