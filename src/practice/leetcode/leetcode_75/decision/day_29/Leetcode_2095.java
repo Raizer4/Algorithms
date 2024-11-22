@@ -15,8 +15,9 @@ public class Leetcode_2095 {
   }
 
     public static void main(String[] args) {
-        ListNode listNode_1 = deleteMiddle(new ListNode(1, new ListNode(2)));
         ListNode listNode_2 = deleteMiddle(new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5, new ListNode(6)))))));
+        ListNode listNode_1 = deleteMiddle(new ListNode(1, new ListNode(2)));
+
 
         while (listNode_1 != null){
             System.out.print(listNode_1.val + " ");
@@ -32,20 +33,21 @@ public class Leetcode_2095 {
     }
 
     public static ListNode deleteMiddle(ListNode head) {
-        if(head == null || head.next == null) return null;
-
-        ListNode slow = head;
         ListNode fast = head;
-        ListNode prev = null;
+        ListNode slow = head;
+        ListNode dummy = new ListNode(0);
+        ListNode prev = dummy;
 
-        while(fast != null && fast.next != null) {
-            prev = slow;
-            slow = slow.next;
+        while (fast != null && fast.next != null){
             fast = fast.next.next;
+            prev.next = slow;
+            prev = prev.next;
+            slow = slow.next;
         }
 
         prev.next = slow.next;
-        return head;
+
+        return dummy.next;
     }
 
 

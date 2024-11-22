@@ -4,6 +4,8 @@ package practice.leetcode.leetcode_75.decision.day_30;
 // https://leetcode.com/problems/odd-even-linked-list/description/?envType=study-plan-v2&envId=leetcode-75
 
 
+import java.util.List;
+
 public class Leetcode_328 {
 
     static public class ListNode {
@@ -24,38 +26,49 @@ public class Leetcode_328 {
     }
 
     public static ListNode oddEvenList(ListNode head) {
-        if (head == null) return null;
+        if (head == null){
+            return null;
+        }else if (head.next == null){
+            return head;
+        }
 
-        ListNode dummy = new ListNode(0);
-        ListNode oddList = dummy;
+        ListNode dummh = new ListNode(0);
+        ListNode dumm = new ListNode(0);
 
-        ListNode dummi = new ListNode(0);
-        ListNode even = dummi;
-
-        ListNode current = head;
+        ListNode even = dummh;
+        ListNode odd = dumm;
 
         int index = 0;
 
-        while (current != null) {
-            if (index % 2 == 0) {
+        ListNode current = head;
+
+        while (current != null){
+
+            if (index % 2 == 0){
                 ListNode node = new ListNode(current.val);
                 even.next = node;
                 even = node;
-            } else {
+            }else {
                 ListNode node = new ListNode(current.val);
-                oddList.next = node;
-                oddList = node;
+                odd.next = node;
+                odd = node;
             }
+
             current = current.next;
             index++;
         }
 
+        ListNode next = dummh.next;
 
+        ListNode cur = next;
 
-        even.next = null;
-        even.next = dummy.next;
+        while (cur.next != null){
+            cur = cur.next;
+        }
 
-        return dummi.next;
+        cur.next = dumm.next;
+
+        return next;
     }
 
 }
