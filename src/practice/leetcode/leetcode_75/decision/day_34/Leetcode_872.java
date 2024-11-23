@@ -1,9 +1,11 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_34;
 
 // Leaf-Similar Trees
 // https://leetcode.com/problems/leaf-similar-trees/description/?envType=study-plan-v2&envId=leetcode-75
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -43,27 +45,29 @@ public class Leetcode_872 {
     }
 
     public static boolean leafSimilar(TreeNode root1, TreeNode root2) {
-        List<Integer> leaves1 = new ArrayList<>();
-        List<Integer> leaves2 = new ArrayList<>();
+        List<Integer> list_1 = new ArrayList<>();
+        List<Integer> list_2 = new ArrayList<>();
 
-        getLeaves(root1, leaves1);
-        getLeaves(root2, leaves2);
 
-        return leaves1.equals(leaves2);
+        dfs(root1,list_1);
+        dfs(root2,list_2);
+
+        return list_1.equals(list_2);
     }
 
-
-    private static void getLeaves(TreeNode node, List<Integer> leaves) {
-        if (node == null) {
+    private static void dfs(TreeNode root , List<Integer> list){
+        if (root == null){
             return;
         }
 
-        if (node.left == null && node.right == null) {
-            leaves.add(node.val);
+        if (root.right == null && root.left == null){
+            list.add(root.val);
         }
 
-        getLeaves(node.left, leaves);
-        getLeaves(node.right, leaves);
+        dfs(root.left,list);
+        dfs(root.right,list);
     }
+
+
 
 }

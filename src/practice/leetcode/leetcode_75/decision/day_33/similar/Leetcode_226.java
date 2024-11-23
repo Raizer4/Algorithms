@@ -24,12 +24,10 @@ public class Leetcode_226 {
         root.right = new TreeNode(7, new TreeNode(6), new TreeNode(9));
 
         TreeNode invertedRoot = invertTree(root);
-
-        printTree(invertedRoot);
     }
 
     public static TreeNode invertTree(TreeNode root) {
-        if (root == null) {
+        if (root == null){
             return null;
         }
 
@@ -42,15 +40,6 @@ public class Leetcode_226 {
         invertTree(root.right);
 
         return root;
-    }
-
-    public static void printTree(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        System.out.print(root.val + " ");
-        printTree(root.left);
-        printTree(root.right);
     }
 
 }
