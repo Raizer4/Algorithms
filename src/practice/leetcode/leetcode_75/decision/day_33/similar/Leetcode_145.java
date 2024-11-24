@@ -22,21 +22,24 @@ public class Leetcode_145 {
   }
 
     public static void main(String[] args) {
-
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(1, new TreeNode(0), new TreeNode(2));
+        root.right = new TreeNode(4);
+        System.out.println(postorderTraversal(root));
     }
 
-    public List<Integer> postorderTraversal(TreeNode root) {
+    public static List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> dfs = preDFS(root);
         return dfs;
     }
 
-    private List<Integer> preDFS(TreeNode root){
+    private static List<Integer> preDFS(TreeNode root){
        List<Integer> list = new ArrayList<>();
        dfs(root,list);
        return list;
     }
 
-    private void dfs (TreeNode treeNode , List<Integer> list){
+    private static void dfs (TreeNode treeNode , List<Integer> list){
        if (treeNode == null){
            return;
        }

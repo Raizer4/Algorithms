@@ -1,7 +1,8 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_35;
 
 // Count Good Nodes in Binary Tree
 // https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75
+
 
 public class Leetcode_1448 {
 
@@ -48,5 +49,7 @@ public class Leetcode_1448 {
 
         return count;
     }
+
+
 
 }
