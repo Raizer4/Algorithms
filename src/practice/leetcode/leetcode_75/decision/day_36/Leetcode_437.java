@@ -1,4 +1,4 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_36;
 
 // Path Sum III
 // https://leetcode.com/problems/path-sum-iii/description/?envType=study-plan-v2&envId=leetcode-75
@@ -39,7 +39,7 @@ public class Leetcode_437 {
         return total;
     }
 
-    private static void helper(TreeNode root, int sum, long curr) {
+   static void  helper(TreeNode root, int sum, long curr) {
         if (root == null) {
             return;
         }
@@ -53,6 +53,7 @@ public class Leetcode_437 {
         helper(root.left, sum, curr);
         helper(root.right, sum, curr);
     }
+
 
 
 }

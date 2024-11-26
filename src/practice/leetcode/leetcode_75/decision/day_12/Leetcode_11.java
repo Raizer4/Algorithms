@@ -16,10 +16,11 @@ public class Leetcode_11 {
 
         int max = 0;
 
+
         while (i < j){
-            int i1 = j - i;
-            int i2 = i1 * Math.min(height[i], height[j]);
-            max = Math.max(max,i2);
+            int temp = (j - i) * (Math.min(height[i], height[j]));
+            max = Math.max(max,temp);
+
             if (height[i] > height[j]){
                 j--;
             }else {
@@ -29,5 +30,6 @@ public class Leetcode_11 {
 
         return max;
     }
+
 
 }

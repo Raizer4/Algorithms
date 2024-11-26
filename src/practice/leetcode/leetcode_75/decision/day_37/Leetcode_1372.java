@@ -1,4 +1,4 @@
-package practice.leetcode.leetcode_75;
+package practice.leetcode.leetcode_75.decision.day_37;
 
 // Longest ZigZag Path in a Binary Tree
 // https://leetcode.com/problems/longest-zigzag-path-in-a-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75
@@ -37,8 +37,8 @@ public class Leetcode_1372 {
             return 0;
         }
 
-        dfs(root.left,1,true);
-        dfs(root.right,1,false);
+        dfs(root.right, 1, false);
+        dfs(root.left, 1, true);
 
         return maxZigZagLength;
     }
