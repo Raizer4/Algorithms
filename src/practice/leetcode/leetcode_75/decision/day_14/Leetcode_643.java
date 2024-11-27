@@ -29,4 +29,6 @@ public class Leetcode_643 {
         return max / k;
     }
 
+
+
 }
