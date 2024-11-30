@@ -1,9 +1,7 @@
-package practice.challenge.leetcode_75;
+package practice.challenge.leetcode_75.decision.day_41;
 
 // Search in a Binary Search Tree
 // https://leetcode.com/problems/search-in-a-binary-search-tree/description/?envType=study-plan-v2&envId=leetcode-75
-
-import java.util.Stack;
 
 public class Leetcode_700 {
 
@@ -33,29 +31,25 @@ public class Leetcode_700 {
     }
 
     public static TreeNode searchBST(TreeNode root, int val) {
-       if (root.val == val){
-           return root;
-       }
+        if(root == null){
+            return null;
+        }
 
-       Stack<TreeNode> stack = new Stack<>();
+        if (root.val == val){
+            return root;
+        }
 
-       TreeNode current = root;
+        TreeNode node_1 = searchBST(root.left, val);
+        TreeNode node_2 = searchBST(root.right, val);
 
-       while (current != null || !stack.empty()){
-           while (current != null){
-                if (current.val == val){
-                    return current;
-                }
-                stack.push(current);
-                current = current.left;
-           }
+        if (node_1 != null){
+            return node_1;
+        }else if (node_2 != null){
+            return node_2;
+        }else {
+            return null;
+        }
 
-           TreeNode pop = stack.pop();
-           current = pop.right;
-       }
-
-
-       return null;
     }
 
 
