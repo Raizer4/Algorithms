@@ -7,17 +7,23 @@ package practice.challenge.leetcode_75.decision.day_35;
 public class Leetcode_1448 {
 
     static public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-      }
-  }
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(3,
@@ -27,29 +33,31 @@ public class Leetcode_1448 {
         System.out.println(goodNodes(root));
     }
 
+    static int count = 0;
+
     public static int goodNodes(TreeNode root) {
-        return countGoodNodes(root, root.val);
+        countGoodNodes(root, root.val);
+        return count;
     }
 
-    private static int countGoodNodes(TreeNode node, int maxSoFar) {
-        if (node == null){
-            return 0;
+    private static void countGoodNodes(TreeNode root, int max){
+        if (root == null){
+            return;
         }
 
-        int count = 0;
-
-        if (node.val >= maxSoFar){
-            count = 1;
+        if (root.val >= max){
+            count++;
         }
 
-        maxSoFar = Math.max(maxSoFar, node.val);
+        max = Math.max(max,root.val);
 
-       count += countGoodNodes(node.left, maxSoFar);
-       count += countGoodNodes(node.right, maxSoFar);
-
-       return count;
+        countGoodNodes(root.left,max);
+        countGoodNodes(root.right,max);
     }
-
-
 
 }
+
+
+
+
+

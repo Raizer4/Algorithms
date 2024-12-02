@@ -26,33 +26,34 @@ public class Leetcode_437 {
         System.out.println(pathSum(root, 4));
     }
 
-    private static int total = 0;
+    static int total = 0;
 
-    public static int pathSum(TreeNode root, int sum) {
-        if (root == null){
+    public static int pathSum(TreeNode root, int targetSum) {
+        if (root == null || targetSum == 0){
             return 0;
         }
 
-        helper(root,sum,0);
-        pathSum(root.left, sum);
-        pathSum(root.right, sum);
+        countingSum(root, 0, targetSum);
+
+        pathSum(root.left, targetSum);
+        pathSum(root.right, targetSum);
 
         return total;
     }
 
-    static void helper(TreeNode root, int sum, long curr) {
-        if (root == null){
+    private static void countingSum(TreeNode root, int sum, int targetSum) {
+        if (root == null) {
             return;
         }
 
-        curr += root.val;
+        sum += root.val;
 
-        if (sum == curr){
+        if (sum == targetSum){
             total++;
         }
 
-        helper(root.left, sum , curr);
-        helper(root.right, sum , curr);
+        countingSum(root.left, sum, targetSum);
+        countingSum(root.right, sum, targetSum);
     }
 
 }

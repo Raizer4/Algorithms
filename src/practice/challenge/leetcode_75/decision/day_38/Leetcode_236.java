@@ -45,12 +45,9 @@ public class Leetcode_236 {
         TreeNode treeNode_1 = lowestCommonAncestor(root.left, p, q);
         TreeNode treeNode_2 = lowestCommonAncestor(root.right, p, q);
 
-
-        if (treeNode_1 != null && treeNode_2 != null){
+        if (treeNode_1  != null && treeNode_2 != null){
             return root;
-        }
-
-        if (treeNode_1 == null){
+        }else if (treeNode_1 == null){
             return treeNode_2;
         }else {
             return treeNode_1;
