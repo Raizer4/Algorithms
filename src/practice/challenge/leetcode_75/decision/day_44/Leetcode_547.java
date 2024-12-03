@@ -1,7 +1,9 @@
-package practice.challenge.leetcode_75;
+package practice.challenge.leetcode_75.decision.day_44;
 
 // Number of Provinces
 // https://leetcode.com/problems/number-of-provinces/description/?envType=study-plan-v2&envId=leetcode-75
+
+
 
 public class Leetcode_547 {
 
@@ -17,6 +19,7 @@ public class Leetcode_547 {
         int n = isConnected.length;
         boolean[] visited = new boolean[n];
         int provinces = 0;
+
 
         for (int i = 0; i < n; i++) {
             if (!visited[i]) {
