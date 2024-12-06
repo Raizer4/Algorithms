@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75;
+package practice.challenge.leetcode_75.decision.day_46;
 
 import java.util.*;
 
@@ -11,18 +11,20 @@ public class Leetcode_399 {
     public static double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
         Map<String, Map<String, Double>> graph = new HashMap<>();
 
-        // 1. Построение графа
+
         for (int i = 0; i < equations.size(); i++) {
             String var1 = equations.get(i).get(0);
             String var2 = equations.get(i).get(1);
+
             double value = values[i];
 
             graph.computeIfAbsent(var1, k -> new HashMap<>()).put(var2, value);
             graph.computeIfAbsent(var2, k -> new HashMap<>()).put(var1, 1.0 / value);
         }
 
-        // 2. Обработка запросов
+
         double[] results = new double[queries.size()];
+
         for (int i = 0; i < queries.size(); i++) {
             String var1 = queries.get(i).get(0);
             String var2 = queries.get(i).get(1);
@@ -40,7 +42,7 @@ public class Leetcode_399 {
         return results;
     }
 
-    // Поиск пути с использованием DFS
+
     private static double dfs(Map<String, Map<String, Double>> graph, String current, String target, double value, Set<String> visited) {
         visited.add(current);
 
