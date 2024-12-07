@@ -1,8 +1,9 @@
-package practice.leetcode.array.easy;
+package practice.leetcode.hash_table.easy;
 
 // Contains Duplicate
 // https://leetcode.com/problems/contains-duplicate/description/
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,12 +16,17 @@ public class Leetcode_217 {
     }
 
     public static boolean containsDuplicate(int[] nums) {
-        Set<Integer> set = new HashSet<>();
+         HashSet<Integer> set = new HashSet<>();
 
-        for (int temp : nums){
-            set.add(temp);
-        }
-        return set.size() != nums.length;
+         for (int temp : nums){
+             if (!set.contains(temp)){
+                 set.add(temp);
+             }else {
+                 return true;
+             }
+         }
+
+         return false;
     }
 
 }

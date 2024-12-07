@@ -15,22 +15,23 @@ public class Leetcode_238 {
     }
 
     public static int[] productExceptSelf(int[] nums) {
-        int[] ints = new int[nums.length];
-        int right = 1;
+        int[] res = new int[nums.length];
+
+        int temp = 1;
 
         for (int i = 0; i < nums.length; i++){
-            ints[i] = right;
-            right *= nums[i];
+            res[i] = temp;
+            temp *= nums[i];
         }
 
-        int left = 1;
+        temp = 1;
 
-       for (int i = nums.length - 1; i >= 0; i--){
-            ints[i] = ints[i] * left;
-            left *= nums[i];
-       }
+        for (int i = nums.length - 1; i >= 0; i--){
+            res[i] *= temp;
+            temp *= nums[i];
+        }
 
-       return ints;
+        return res;
     }
 
 }
