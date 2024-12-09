@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_12;
+package practice.leetcode.two_pointers.medium;
 
 // Container With Most Water
 // https://leetcode.com/problems/container-with-most-water/description/?envType=study-plan-v2&envId=leetcode-75
@@ -11,21 +11,23 @@ public class Leetcode_11 {
     }
 
     public static int maxArea(int[] height) {
+        int max = 0;
+
         int i = 0;
         int j = height.length - 1;
 
-        int max = 0;
-
-
         while (i < j){
-            int temp = (j - i) * (Math.min(height[i], height[j]));
-            max = Math.max(max,temp);
+            int min = Math.min(height[i],height[j]);
+            int sum = min * (j - i);
+
+            max = Math.max(sum,max);
 
             if (height[i] > height[j]){
                 j--;
             }else {
                 i++;
             }
+
         }
 
         return max;
