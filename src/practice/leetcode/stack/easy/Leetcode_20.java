@@ -16,31 +16,24 @@ public class Leetcode_20 {
     public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
 
-        HashMap<Character,Character> map = new HashMap<>();
-        map.put(')','(');
-        map.put(']','[');
-        map.put('}','{');
+        HashMap<Character, Character> map = new HashMap<>();
+        map.put('(',')');
+        map.put('[',']');
+        map.put('{','}');
 
-        char[] array = s.toCharArray();
-
-        for (char temp : array){
-            if (map.containsValue(temp)){
-                stack.push(temp);
-            }else if (stack.empty()){
+        for (char temp : s.toCharArray()){
+            if (temp == '(' || temp == '[' || temp == '{'){
+                stack.add(temp);
+            }else if (stack.isEmpty()){
                 return false;
-            }else if(map.containsKey(temp)) {
-                if (map.get(temp) != stack.pop()){
+            }else {
+                if (map.get(stack.pop()) != temp){
                     return false;
                 }
             }
         }
 
-        if (stack.size() == 0){
-            return true;
-        }else {
-            return false;
-        }
-
+        return stack.isEmpty();
     }
 
 }
