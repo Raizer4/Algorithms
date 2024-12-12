@@ -1,13 +1,15 @@
 package practice.leetcode.design.medium;
 
-import java.util.Set;
+// Min Stack
+// https://leetcode.com/problems/min-stack/description/
+
 import java.util.Stack;
-import java.util.TreeSet;
+
 
 public class Leetcode_155 {
 
-    static class MinStack {
 
+   static class MinStack {
         Stack<Integer> stack;
         Stack<Integer> stack_min;
 
@@ -26,7 +28,7 @@ public class Leetcode_155 {
         public void pop() {
             if (stack.isEmpty()) return;
             int top = stack.pop();
-            if (top == stack_min.peek()) {
+            if (!stack_min.isEmpty() && top == stack_min.peek()) {
                 stack_min.pop();
             }
         }
