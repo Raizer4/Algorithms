@@ -15,27 +15,29 @@ public class Leetcode_875 {
         Arrays.sort(piles);
 
         int l = 1;
-        int r = Arrays.stream(piles).max().getAsInt();
+        int r = piles[piles.length - 1];
 
-        int response = -1;
+        int res = 0;
 
         while (l <= r){
-            int m = (l + r) / 2;
-            long ceil = 0;
+            int m = (l + r) / 2 ;
 
-            for (int p : piles){
-                ceil += Math.ceil((double) p / m);
+            int count = 0;
+
+            for (int temp : piles){
+                count += Math.ceil((double) temp / m);
             }
 
-            if (ceil > h){
-                l = m + 1;
-            }else {
-                response = m;
+            if (count <= h){
+                res = m;
                 r = m - 1;
+            }else {
+                l = m + 1;
             }
+
         }
 
-        return response;
+        return res;
     }
 
 
