@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_5;
+package practice.leetcode.two_pointers.easy;
 
 // Reverse Vowels of a String
 // https://leetcode.com/problems/reverse-vowels-of-a-string/description/?envType=study-plan-v2&envId=leetcode-75

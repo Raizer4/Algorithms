@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_4.similar;
+package practice.leetcode.array.easy;
 
 // Minimum Operations to Make the Array Increasing
 // https://leetcode.com/problems/minimum-operations-to-make-the-array-increasing/description/

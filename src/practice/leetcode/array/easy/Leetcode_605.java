@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_4;
+package practice.leetcode.array.easy;
 
 // Can Place Flowers
 // https://leetcode.com/problems/can-place-flowers/description/?envType=study-plan-v2&envId=leetcode-75

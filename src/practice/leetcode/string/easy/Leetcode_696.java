@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_5.similar;
+package practice.leetcode.string.easy;
 
 // Count Binary Substrings
 // https://leetcode.com/problems/count-binary-substrings/description/

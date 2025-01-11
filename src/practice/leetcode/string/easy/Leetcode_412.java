@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_2.similar;
+package practice.leetcode.string.easy;
 
 // Fizz Buzz
 // https://leetcode.com/problems/fizz-buzz/description/

@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_2.similar;
+package practice.leetcode.string.easy;
 
 // Maximum Odd Binary Number
 // https://leetcode.com/problems/maximum-odd-binary-number/description/

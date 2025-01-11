@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_4.similar;
+package practice.leetcode.array.easy;
 
 // Maximum Sum With Exactly K Elements
 // https://leetcode.com/problems/maximum-sum-with-exactly-k-elements/description/

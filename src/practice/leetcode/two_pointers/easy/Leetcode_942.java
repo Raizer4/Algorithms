@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_1.similar;
+package practice.leetcode.two_pointers.easy;
 
 // DI String Match
 // https://leetcode.com/problems/di-string-match/description/

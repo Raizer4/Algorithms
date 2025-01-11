@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_5.similar;
+package practice.leetcode.hash_table.medium;
 
 // Partition Labels
 // https://leetcode.com/problems/partition-labels/description/

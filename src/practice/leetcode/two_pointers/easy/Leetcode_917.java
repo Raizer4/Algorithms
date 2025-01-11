@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_5.similar;
+package practice.leetcode.two_pointers.easy;
 
 // Reverse Only Letters
 // https://leetcode.com/problems/reverse-only-letters/description/

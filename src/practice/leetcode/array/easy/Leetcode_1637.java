@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_3.similar;
+package practice.leetcode.array.easy;
 
 // Widest Vertical Area Between Two Points Containing No Points
 // https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/description/

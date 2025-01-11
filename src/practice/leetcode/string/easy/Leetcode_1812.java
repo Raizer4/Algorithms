@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_2.similar;
+package practice.leetcode.string.easy;
 
 // Determine Color of a Chessboard Square
 // https://leetcode.com/problems/determine-color-of-a-chessboard-square/description/

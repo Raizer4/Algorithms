@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_1;
+package practice.leetcode.two_pointers.easy;
 
 // Merge Strings Alternately
 // https://leetcode.com/problems/merge-strings-alternately/description/?envType=study-plan-v2&envId=leetcode-75

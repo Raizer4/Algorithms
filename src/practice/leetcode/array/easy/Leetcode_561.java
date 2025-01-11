@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_4.similar;
+package practice.leetcode.array.easy;
 
 // Array Partition
 // https://leetcode.com/problems/array-partition/description/
