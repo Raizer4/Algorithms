@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_14;
+package practice.leetcode.siliding_window.easy;
 
 // Maximum Average Subarray I
 // https://leetcode.com/problems/maximum-average-subarray-i/description/?envType=study-plan-v2&envId=leetcode-75
@@ -13,18 +13,18 @@ public class Leetcode_643 {
     }
 
     public static double findMaxAverage(int[] nums, int k) {
-        double max = 0;
+        double tempMax = 0;
 
         for (int i = 0; i < k; i++){
-            max += nums[i];
+            tempMax += nums[i];
         }
 
-        double current = max;
+        double max = tempMax;
 
-        for (int i = k; i < nums.length; i++){
-            current += nums[i];
-            current -= nums[i - k];
-            max = Math.max(current, max);
+        for (int r = k; r < nums.length; r++){
+            tempMax -= nums[r - k];
+            tempMax += nums[r];
+            max = Math.max(max,tempMax);
         }
 
         return max / k;

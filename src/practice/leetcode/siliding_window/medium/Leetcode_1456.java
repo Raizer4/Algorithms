@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_15;
+package practice.leetcode.siliding_window.medium;
 
 // Maximum Number of Vowels in a Substring of Given Length
 // https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/description/?envType=study-plan-v2&envId=leetcode-75
@@ -12,27 +12,34 @@ public class Leetcode_1456 {
     }
 
     public static int maxVowels(String s, int k) {
-        int max = 0;
-        String vowels = "aoieuAOIEU";
+        int tempMax = 0;
 
-        for (int i = 0; i < k; i++){
-            if (vowels.indexOf(s.charAt(i)) != -1){
-                max++;
+        String str = "AOIUEaoiue";
+
+        for (int i = 0; i < k; i++) {
+            if (str.indexOf(s.charAt(i)) != -1){
+                tempMax++;
             }
         }
 
-        int current = max;
+        int max = tempMax;
 
-        for (int i = k; i < s.length(); i++){
-            if (vowels.indexOf(s.charAt(i - k)) != -1){
-                current--;
+        int l = 0;
+
+        for (int r = k; r < s.length(); r++){
+
+            if (str.indexOf(s.charAt(r)) != -1){
+                tempMax++;
             }
 
-            if (vowels.indexOf(s.charAt(i)) != -1){
-                current++;
+            if (str.indexOf(s.charAt(l)) != -1){
+                tempMax--;
             }
-            max = Math.max(max,current);
+
+            l++;
+            max = Math.max(max,tempMax);
         }
+
 
         return max;
     }
