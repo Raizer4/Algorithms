@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_16.similar;
+package practice.leetcode.siliding_window.easy;
 
 // Find X-Sum of All K-Long Subarrays I
 // https://leetcode.com/problems/find-x-sum-of-all-k-long-subarrays-i/description/

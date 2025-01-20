@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_17.similar;
+package practice.leetcode.siliding_window.easy;
 
 // Minimum Difference Between Highest and Lowest of K Scores
 // https://leetcode.com/problems/minimum-difference-between-highest-and-lowest-of-k-scores/description/
@@ -14,17 +14,15 @@ public class Leetcode_1984 {
     }
 
     public static int minimumDifference(int[] nums, int k) {
-        if (k == 1) return 0;
-
         Arrays.sort(nums);
-        int minDifference = Integer.MAX_VALUE;
+
+        int min = Integer.MAX_VALUE;
 
         for (int i = 0; i <= nums.length - k; i++) {
-            int difference = nums[i + k - 1] - nums[i];
-            minDifference = Math.min(minDifference, difference);
+            min = Math.min(min,nums[i + k - 1] - nums[i]);
         }
 
-        return minDifference;
+        return min;
     }
 
 }

@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_17.similar;
+package practice.leetcode.siliding_window.easy;
 
 // Longest Even Odd Subarray With Threshold
 // https://leetcode.com/problems/longest-even-odd-subarray-with-threshold/description/

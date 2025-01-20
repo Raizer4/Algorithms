@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_17;
+package practice.leetcode.siliding_window.medium;
 
 // Longest Subarray of 1's After Deleting One Element
 // https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/description/?envType=study-plan-v2&envId=leetcode-75
@@ -12,27 +12,27 @@ public class Leetcode_1493 {
     }
 
     public static int longestSubarray(int[] nums) {
-       int zero = 0;
-       int j = 0;
-       int max = 0;
+        int zero = 0;
+        int l = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 0){
+        int count = 0;
+
+        for (int r = 0; r < nums.length; r++) {
+            if (nums[r] == 0){
                 zero++;
             }
 
             while (zero > 1){
-                if (nums[j] == 0){
+                if (nums[l] == 0){
                     zero--;
                 }
-
-                j++;
+                l++;
             }
 
-            max = Math.max(max,i - j);
+            count = Math.max(count, (r - l + 1));
         }
 
-        return max;
+        return count - 1;
     }
 
 }
