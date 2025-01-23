@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_31;
+package practice.leetcode.linkedList.easy;
 
 // Reverse Linked List
 // https://leetcode.com/problems/reverse-linked-list/description/
