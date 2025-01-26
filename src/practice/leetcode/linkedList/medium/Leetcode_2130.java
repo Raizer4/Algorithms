@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_32;
+package practice.leetcode.linkedList.medium;
 
 // Maximum Twin Sum of a Linked List
 // https://leetcode.com/problems/maximum-twin-sum-of-a-linked-list/description/?envType=study-plan-v2&envId=leetcode-75

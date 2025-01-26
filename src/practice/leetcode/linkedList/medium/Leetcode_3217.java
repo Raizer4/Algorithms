@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_32.similar;
+package practice.leetcode.linkedList.medium;
 
 // Delete Nodes From Linked List Present in Array
 // https://leetcode.com/problems/delete-nodes-from-linked-list-present-in-array/description/

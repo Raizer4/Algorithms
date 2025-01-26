@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_32.similar;
+package practice.leetcode.linkedList.medium;
 
 // Swap Nodes in Pairs
 // https://leetcode.com/problems/swap-nodes-in-pairs/description/

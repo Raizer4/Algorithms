@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_30.similar;
+package practice.leetcode.linkedList.medium;
 
 // Split Linked List in Parts
 // https://leetcode.com/problems/split-linked-list-in-parts/description/

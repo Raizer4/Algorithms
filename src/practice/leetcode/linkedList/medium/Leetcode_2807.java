@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_30.similar;
+package practice.leetcode.linkedList.medium;
 
 // Insert Greatest Common Divisors in Linked List
 // https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/description/

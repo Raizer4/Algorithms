@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_29;
+package practice.leetcode.linkedList.medium;
 
 // Delete the Middle Node of a Linked List
 // https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/?envType=study-plan-v2&envId=leetcode-75

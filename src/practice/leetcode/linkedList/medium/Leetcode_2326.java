@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_31.similar;
+package practice.leetcode.linkedList.medium;
 
 // Spiral Matrix IV
 // https://leetcode.com/problems/spiral-matrix-iv/description/

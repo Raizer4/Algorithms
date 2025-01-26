@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_29.similar;
+package practice.leetcode.linkedList.medium;
 
 // Delete Node in a Linked List
 // https://leetcode.com/problems/delete-node-in-a-linked-list/description/

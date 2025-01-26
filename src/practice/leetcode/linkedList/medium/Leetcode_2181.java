@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_29.similar;
+package practice.leetcode.linkedList.medium;
 
 // Merge Nodes in Between Zeros
 // https://leetcode.com/problems/merge-nodes-in-between-zeros/description/

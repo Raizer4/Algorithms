@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_30;
+package practice.leetcode.linkedList.medium;
 
 // Odd Even Linked List
 // https://leetcode.com/problems/odd-even-linked-list/description/?envType=study-plan-v2&envId=leetcode-75

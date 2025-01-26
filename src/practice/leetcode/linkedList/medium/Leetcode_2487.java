@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_30.similar;
+package practice.leetcode.linkedList.medium;
 
 // Remove Nodes From Linked List
 // https://leetcode.com/problems/remove-nodes-from-linked-list/submissions/1457572446/

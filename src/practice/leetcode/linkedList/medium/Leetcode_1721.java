@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_31.similar;
+package practice.leetcode.linkedList.medium;
 
 // Swapping Nodes in a Linked List
 // https://leetcode.com/problems/swapping-nodes-in-a-linked-list/description/

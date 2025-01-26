@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_31.similar;
+package practice.leetcode.linkedList.medium;
 
 // Find the Minimum and Maximum Number of Nodes Between Critical Points
 // https://leetcode.com/problems/find-the-minimum-and-maximum-number-of-nodes-between-critical-points/description/

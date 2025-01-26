@@ -3,7 +3,6 @@ package practice.leetcode.linkedList.medium;
 // Add Two Numbers
 // https://leetcode.com/problems/add-two-numbers/description/?envType=problem-list-v2&envId=linked-list&difficulty=MEDIUM
 
-import java.math.BigInteger;
 
 public class Leetcode_2 {
 
@@ -16,7 +15,7 @@ public class Leetcode_2 {
   }
 
     public static void main(String[] args) {
-        ListNode listNode = addTwoNumbers(new ListNode(2, new ListNode(4, new ListNode(3))), new ListNode(5, new ListNode(6, new ListNode(8))));
+        ListNode listNode = addTwoNumbers(new ListNode(2, new ListNode(4, new ListNode(3))), new ListNode(5, new ListNode(6, new ListNode(4))));
 
         while (listNode != null){
             System.out.println(listNode.val);
@@ -26,40 +25,27 @@ public class Leetcode_2 {
     }
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        StringBuilder builder_1 = new StringBuilder();
-        StringBuilder builder_2 = new StringBuilder();
+       ListNode current = new ListNode(0);
+       ListNode dummy = current;
 
-        while (l1 != null){
-            builder_1.append(l1.val);
-            l1 = l1.next;
-        }
+       int cur = 0;
+       while (l1 != null || l2 != null || cur != 0){
+           int v1 = (l1 != null) ? l1.val : 0;
+           int v2 = (l2 != null) ? l2.val : 0;
 
-        while (l2 != null){
-            builder_2.append(l2.val);
-            l2 = l2.next;
-        }
+           int temp = v1 + v2 + cur;
+           cur = temp / 10;
+           int val = temp % 10;
+           ListNode node = new ListNode(val);
 
-        BigInteger res_1 = new BigInteger(builder_1.reverse().toString());
-        BigInteger res_2 = new BigInteger(builder_2.reverse().toString());
-        BigInteger res = res_1.add(res_2);
+           dummy.next = node;
+           dummy = dummy.next;
 
+           l1 = (l1.next != null) ? l1 = l1.next : null;
+           l2 = (l2.next != null) ? l2 = l2.next : null;
+       }
 
-        StringBuilder builder = new StringBuilder(String.valueOf(res)).reverse();
-
-
-        ListNode dummy = new ListNode(0);
-        ListNode currency = dummy;
-        int i = 0;
-
-        while(i < builder.length()){
-            while (currency.next != null){
-                currency = currency.next;
-            }
-            currency.next = new ListNode(Integer.parseInt(String.valueOf(builder.charAt(i))));
-            i++;
-        }
-
-        return dummy.next;
+       return current.next;
     }
 
 }
