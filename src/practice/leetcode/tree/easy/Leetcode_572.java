@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_39.similar;
+package practice.leetcode.tree.easy;
 
 // Subtree of Another Tree
 // https://leetcode.com/problems/subtree-of-another-tree/description/
@@ -33,28 +33,19 @@ public class Leetcode_572 {
             return false;
         }
 
-        if (dfs(root, subRoot)) {
+        if (dfs(root, subRoot)){
             return true;
         }
 
-       return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
+        return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
     }
 
     private static boolean dfs(TreeNode root, TreeNode subRoot){
-        if (root == null && subRoot == null){
-            return true;
-        }
-
         if (root == null || subRoot == null){
-            return false;
+            return root == subRoot;
         }
 
-        if (root.val != subRoot.val){
-            return false;
-        }
-
-
-        return dfs(root.left, subRoot.left) && dfs(root.right, subRoot.right);
+        return root.val == subRoot.val && dfs(root.left,subRoot.left) && dfs(root.right, subRoot.right);
     }
 
 }

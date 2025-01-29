@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_33;
+package practice.leetcode.tree.easy;
 
 // Maximum Depth of Binary Tree
 // https://leetcode.com/problems/maximum-depth-of-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75
@@ -26,17 +26,21 @@ public class Leetcode_104 {
       }
   }
 
-
+    static int max = 0;
 
     public static int maxDepth(TreeNode root) {
-        if (root == null){
-            return 0;
+        dfs(root,0);
+        return max;
+    }
+
+    private static void dfs(TreeNode tree, int sum){
+        if (tree == null){
+            max = Math.max(max,sum);
+            return;
         }
 
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-
-        return 1 + Math.max(left, right);
+        dfs(tree.left, sum + 1);
+        dfs(tree.right, sum + 1);
     }
 
 

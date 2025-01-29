@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_37.similar;
+package practice.leetcode.tree.easy;
 
 // Diameter of Binary Tree
 // https://leetcode.com/problems/diameter-of-binary-tree/description/
@@ -25,37 +25,31 @@ public class Leetcode_543 {
     }
 
     public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
 
+        int diameter = diameterOfBinaryTree(root);
+        System.out.println("Диаметр дерева: " + diameter);
     }
-
-    static int max = 0;
 
     public static int diameterOfBinaryTree(TreeNode root) {
-       dfs(root);
-       return max;
+        int[] res = new int[]{0};
+        dfs(root,res);
+        return res[0];
     }
 
-    private static void dfs(TreeNode root){
-        if (root == null) {
-            return;
-        }
-
-        max = Math.max(maxDepth(root.left) + maxDepth(root.right), max);
-
-        dfs(root.left);
-        dfs(root.right);
-    }
-
-    private static int maxDepth(TreeNode root){
+    private static int dfs(TreeNode root, int[] res) {
         if (root == null){
             return 0;
         }
 
-        int left = maxDepth(root.left);
-        int right = maxDepth(root.right);
-
+        int left = dfs(root.left, res);
+        int right = dfs(root.right,res);
+        res[0] = Math.max(res[0], left + right);
         return 1 + Math.max(left,right);
     }
-
 
 }

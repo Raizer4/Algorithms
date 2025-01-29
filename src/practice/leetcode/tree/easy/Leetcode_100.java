@@ -28,13 +28,30 @@ public class Leetcode_100 {
         System.out.println(isSameTree(new TreeNode(1,new TreeNode(2),new TreeNode(3)),new TreeNode(1,new TreeNode(2),new TreeNode(3))));
     }
 
-    public static boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == null || q == null){
-            return p == q;
-        }
+    static boolean flag = true;
 
-        return p.val == q.val && isSameTree(p.left, q.left) && isSameTree(p.right,p.right);
+    public static boolean isSameTree(TreeNode p, TreeNode q) {
+        dfs(p,q);
+        return flag;
     }
 
+    private static void dfs(TreeNode p, TreeNode q){
+        if (p == null && q == null){
+            return;
+        }
+
+        if (p == null || q == null){
+            flag = false;
+            return;
+        }
+
+        if (p.val != q.val){
+            flag = false;
+            return;
+        }
+
+        dfs(p.left, q.left);
+        dfs(p.right, q.right);
+    }
 
 }

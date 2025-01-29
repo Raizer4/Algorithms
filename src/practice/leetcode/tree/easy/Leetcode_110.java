@@ -30,8 +30,11 @@ public class Leetcode_110 {
     }
 
     public static boolean isBalanced(TreeNode root) {
-        return dfs(root) != -1;
+        dfs(root);
+        return flag;
     }
+
+    static boolean flag = true;
 
     private static int dfs(TreeNode root){
         if (root == null){
@@ -41,11 +44,11 @@ public class Leetcode_110 {
         int left = dfs(root.left);
         int right = dfs(root.right);
 
-        if (left == -1 || right == -1 || Math.abs(left - right) > 1){
-            return -1;
+        if (Math.abs(left - right) > 1){
+            flag = false;
         }
 
-        return Math.max(left,right) + 1;
+        return 1 + Math.max(left,right);
     }
 
 }
