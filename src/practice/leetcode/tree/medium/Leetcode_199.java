@@ -1,14 +1,10 @@
-package practice.challenge.leetcode_75.decision.day_39;
+package practice.leetcode.tree.medium;
 
 // Binary Tree Right Side View
 // https://leetcode.com/problems/binary-tree-right-side-view/description/?envType=study-plan-v2&envId=leetcode-75
 
 
-
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class Leetcode_199 {
 
@@ -26,11 +22,11 @@ public class Leetcode_199 {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.right = new TreeNode(5);
-        root.right.right = new TreeNode(4);
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
 
         System.out.println(rightSideView(root));
     }
@@ -42,31 +38,28 @@ public class Leetcode_199 {
             return list;
         }
 
-        Queue<TreeNode> nodes = new LinkedList<>();
-        nodes.add(root);
+        Deque<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
 
-        while (!nodes.isEmpty()) {
-            int size = nodes.size();
-            int last = 0;
+        while (!queue.isEmpty()){
+            list.add(queue.peekLast().val);
 
-            for (int i = 0; i < size; i++){
-                TreeNode poll = nodes.poll();
-                last = poll.val;
+            for (int i = queue.size(); i > 0; i--) {
+                TreeNode poll = queue.poll();
 
-                if (poll.left != null){
-                    nodes.add(poll.left);
+                if (poll.left != null) {
+                    queue.add(poll.left);
                 }
-                if (poll.right != null){
-                    nodes.add(poll.right);
+
+                if (poll.right != null) {
+                    queue.add(poll.right);
                 }
             }
-            list.add(last);
+
         }
 
         return list;
     }
-
-
 
 
 }

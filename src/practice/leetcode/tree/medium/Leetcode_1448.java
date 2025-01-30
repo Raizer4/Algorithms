@@ -1,4 +1,4 @@
-package practice.challenge.leetcode_75.decision.day_35;
+package practice.leetcode.tree.medium;
 
 // Count Good Nodes in Binary Tree
 // https://leetcode.com/problems/count-good-nodes-in-binary-tree/description/?envType=study-plan-v2&envId=leetcode-75
@@ -36,23 +36,24 @@ public class Leetcode_1448 {
     static int count = 0;
 
     public static int goodNodes(TreeNode root) {
-        countGoodNodes(root, root.val);
+        dfs(root, root.val);
         return count;
     }
 
-    private static void countGoodNodes(TreeNode root, int max){
-        if (root == null){
+    private static void dfs(TreeNode node, int max){
+        if (node == null){
             return;
         }
 
-        if (root.val >= max){
+        if (node.val >= max){
             count++;
+            dfs(node.left, node.val);
+            dfs(node.right, node.val);
+        }else {
+            dfs(node.left, max);
+            dfs(node.right, max);
         }
 
-        max = Math.max(max,root.val);
-
-        countGoodNodes(root.left,max);
-        countGoodNodes(root.right,max);
     }
 
 }
