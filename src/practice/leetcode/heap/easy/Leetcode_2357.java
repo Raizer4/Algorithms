@@ -1,7 +1,8 @@
 package practice.leetcode.heap.easy;
 
-//
-//
+// Make Array Zero by Subtracting Equal Amounts
+// https://leetcode.com/problems/make-array-zero-by-subtracting-equal-amounts/description/
+
 
 
 import java.util.PriorityQueue;
@@ -9,38 +10,36 @@ import java.util.PriorityQueue;
 public class Leetcode_2357 {
 
     public static void main(String[] args) {
-
+        System.out.println(minimumOperations(new int[]{1,5,0,3,5}));
     }
 
     public static int minimumOperations(int[] nums) {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
-
-        for (int temp : nums){
-            priorityQueue.add(temp);
+        for (int num : nums) {
+            if (num > 0) {
+                priorityQueue.add(num);
+            }
         }
 
-        priorityQueue.poll();
         int count = 0;
 
-        while (true){
-            boolean flag = true;
-            Integer peek = priorityQueue.peek();
+        while (!priorityQueue.isEmpty()) {
+            int min = priorityQueue.poll();
+            count++;
 
-            for (int temp : priorityQueue){
-                if (temp > 0){
-                    priorityQueue.add(temp - peek);
-                    flag = false;
+            PriorityQueue<Integer> temp = new PriorityQueue<>();
+
+            while (!priorityQueue.isEmpty()) {
+                int num = priorityQueue.poll() - min;
+                if (num > 0) {
+                    temp.add(num);
                 }
             }
 
-            count++;
-
-            if (flag){
-                return count;
-            }
+            priorityQueue = temp;
         }
 
-
+        return count;
     }
 
 }
