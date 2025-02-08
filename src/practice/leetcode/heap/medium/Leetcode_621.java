@@ -14,40 +14,39 @@ public class Leetcode_621 {
     public static int leastInterval(char[] tasks, int n) {
         Map<Character, Integer> map = new HashMap<>();
 
-        for (char task : tasks) {
-            map.put(task, map.getOrDefault(task, 0) + 1);
+        for (char temp : tasks) {
+            map.put(temp, map.getOrDefault(temp, 0) + 1);
         }
 
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
         priorityQueue.addAll(map.values());
 
         int count = 0;
 
         while (!priorityQueue.isEmpty()) {
-            List<Integer> temp = new ArrayList<>();
-
+            List<Integer> arr = new ArrayList<>();
 
             for (int i = 0; i <= n; i++) {
 
                 if (!priorityQueue.isEmpty()) {
-                    int freq = priorityQueue.poll();
+                    int poll = priorityQueue.poll();
 
-                    if (freq > 1) {
-                        temp.add(freq - 1);
+                    if (poll > 1) {
+                        arr.add(poll - 1);
                     }
                 }
 
                 count++;
 
-                if (priorityQueue.isEmpty() && temp.isEmpty()) {
+                if (priorityQueue.isEmpty() && arr.isEmpty()){
                     break;
                 }
             }
 
-            priorityQueue.addAll(temp);
-        }
+            priorityQueue.addAll(arr);
+       }
 
-        return count;
+       return count;
     }
 
 }
