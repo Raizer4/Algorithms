@@ -12,36 +12,42 @@ public class Leetcode_2542 {
     }
 
     public static long maxScore(int[] nums1, int[] nums2, int k) {
-        int[][] pairs = new int[nums1.length][2];
+        int[][] base = new int[nums1.length][2];
 
-        for (int i = 0; i < nums1.length; i++) {
-            pairs[i] = new int[]{nums1[i], nums2[i]};
+        for (int i = 0; i < nums1.length; i++){
+            int i1 = nums1[i];
+            int i2 = nums2[i];
+
+            int[] ints = {i1, i2};
+
+            base[i] = ints;
         }
 
-        Arrays.sort(pairs, (a, b ) -> b[1] - a[1]);
+        Arrays.sort(base, (a,b) -> b[1] - a[1]);
 
-        PriorityQueue<Integer> pq = new PriorityQueue<>(k);
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue(k);
+        int sum = 0;
 
-        long sum = 0;
-        long maxScore = 0;
+        int max = 0;
 
-        for (int[] pair : pairs) {
-            int num1 = pair[0];
-            int num2 = pair[1];
+        for (int[] arr : base){
+            int num1 = arr[0];
+            int num2 = arr[1];
 
-            pq.add(num1);
+            priorityQueue.add(num1);
             sum += num1;
 
-            if (pq.size() > k) {
-                sum -= pq.poll();
+            if (priorityQueue.size() > k){
+                sum -= priorityQueue.poll();
             }
 
-            if (pq.size() == k) {
-                maxScore = Math.max(maxScore, sum * num2);
+            if (priorityQueue.size() == k){
+                max = Math.max(max, sum * num2);
             }
+
         }
 
-        return maxScore;
+        return max;
     }
 
 }
