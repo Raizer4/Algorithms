@@ -13,15 +13,15 @@ public class Leetcode_78 {
     }
 
     public static List<List<Integer>> subsets(int[] nums) {
-        List<List<Integer>> list = new ArrayList<>();
-        List<Integer> subset = new ArrayList<>();
-        dfs(nums,0,subset, list);
-        return list;
+       List<List<Integer>> base = new ArrayList<>();
+       List<Integer> sublist = new ArrayList<>();
+       dfs(nums, 0, sublist,base);
+       return base;
     }
 
-    private static void dfs(int[] nums , int i , List<Integer> subset ,List<List<Integer>> list){
+    private static void dfs(int[] nums, int i, List<Integer> subset,  List<List<Integer>> list){
         if (i >= nums.length){
-             list.add(new ArrayList<>(subset));
+            list.add(new ArrayList<>(subset));
             return;
         }
 

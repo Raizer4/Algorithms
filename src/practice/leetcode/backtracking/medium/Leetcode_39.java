@@ -14,27 +14,27 @@ public class Leetcode_39 {
 
     static private List<List<Integer>> res;
 
-    public static List<List<Integer>> combinationSum(int[] nums, int target) {
+    public static List<List<Integer>> combinationSum(int[] candidates, int target) {
         res = new ArrayList<>();
-        List<Integer> cur = new ArrayList<>();
-        dfs(nums,target,cur, 0);
+        List<Integer> subset = new ArrayList<>();
+        dfs(candidates, 0, target, subset);
         return res;
     }
 
-    private static void dfs(int[] nums, int target, List<Integer> cur, int i) {
+    private static void dfs(int[] candidates, int i, int target, List<Integer> subset){
         if (target == 0){
-            res.add(new ArrayList<>(cur));
+            res.add(new ArrayList<>(subset));
             return;
         }
 
-        if (target < 0 || i >= nums.length){
+        if (target < 0 || i >= candidates.length){
             return;
         }
 
-        cur.add(nums[i]);
-        dfs(nums, target - nums[i], cur,i);
-        cur.remove(cur.size() - 1);
-        dfs(nums, target, cur, i + 1);
+        subset.add(candidates[i]);
+        dfs(candidates, i, target - candidates[i], subset);
+        subset.remove(subset.size() - 1);
+        dfs(candidates, i + 1, target, subset);
     }
 
 }
