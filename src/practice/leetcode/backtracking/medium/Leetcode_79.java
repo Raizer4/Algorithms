@@ -9,9 +9,9 @@ public class Leetcode_79 {
         System.out.println(exist(new char[][]{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}, "ABCCED"));
     }
 
-    private static int ROWS, COLS;
+    private static int COLS, ROWS;
     private static boolean[][] visited;
-    
+
     public static boolean exist(char[][] board, String word) {
         ROWS = board.length;
         COLS = board[0].length;
@@ -19,7 +19,7 @@ public class Leetcode_79 {
 
         for (int r = 0; r < ROWS; r++) {
             for (int c = 0; c < COLS; c++) {
-                if (dfs(board, word, r, c, 0)){
+                if (dfs(board,0,c,r,word)){
                     return true;
                 }
             }
@@ -27,8 +27,8 @@ public class Leetcode_79 {
 
         return false;
     }
-    
-    private static boolean dfs(char[][] board, String word, int r, int c, int i){
+
+    private static boolean dfs(char[][] board, int i, int c, int r, String word){
         if (i == word.length()){
             return true;
         }
@@ -39,14 +39,15 @@ public class Leetcode_79 {
 
         visited[r][c] = true;
 
-        boolean res = dfs(board, word,r + 1, c, i + 1) ||
-                      dfs(board, word,r - 1, c, i + 1) ||
-                      dfs(board, word, r, c + 1, i + 1) ||
-                      dfs(board, word, r, c - 1, i + 1);
+        boolean res = dfs(board, i + 1,  c + 1, r, word) ||
+                      dfs(board, i + 1, c - 1, r, word) ||
+                      dfs(board, i + 1, c, r + 1, word) ||
+                      dfs(board, i + 1, c, r - 1, word);
 
         visited[r][c] = false;
 
         return res;
     }
+
 
 }
