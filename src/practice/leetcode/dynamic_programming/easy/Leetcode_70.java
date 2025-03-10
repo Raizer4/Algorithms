@@ -15,17 +15,17 @@ public class Leetcode_70 {
             return n;
         }
 
-        int prev1 = 1;
-        int prev2 = 2;
-        int current = 0;
+        int[] arr = new int[n + 1];
+
+        arr[1] = 1;
+        arr[2] = 2;
 
         for (int i = 3; i <= n; i++) {
-            current = prev1 + prev2;
-            prev1 = prev2;
-            prev2 = current;
+            arr[i] = arr[i - 1] + arr[i - 2];
         }
 
-        return current;
+
+        return arr[n];
     }
 
 }
