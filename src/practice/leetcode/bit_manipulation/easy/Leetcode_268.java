@@ -1,10 +1,7 @@
-package practice.leetcode.array.easy;
+package practice.leetcode.bit_manipulation.easy;
 
 // Missing Number
 // https://leetcode.com/problems/missing-number/description/
-
-import java.util.Arrays;
-
 
 public class Leetcode_268 {
 
@@ -15,15 +12,16 @@ public class Leetcode_268 {
     }
 
     public static int missingNumber(int[] nums) {
-        Arrays.sort(nums);
+        int n = nums.length;
+        int xorr = n;
 
-        for (int i = 0; i < nums[nums.length-1]; i++){
-            if (nums[i] != i){
-                return i;
-            }
+        for (int i = 0; i < n; i++) {
+            int i1 = i ^ nums[i];
+
+            xorr ^= i1;
         }
-
-        return nums[nums.length - 1] + 1;
+        
+        return xorr;
     }
 
 }

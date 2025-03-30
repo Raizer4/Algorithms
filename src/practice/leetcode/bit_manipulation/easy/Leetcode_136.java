@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.bit_manipulation.easy;
 
 // Single Number
 // https://leetcode.com/problems/single-number/description/
@@ -15,19 +15,13 @@ public class Leetcode_136 {
     }
 
     public static int singleNumber(int[] nums) {
-        Stack<Integer> stack = new Stack<>();
-        Arrays.sort(nums);
+        int res = 0;
 
-        for (int i = 0; i < nums.length; i++){
-            if (!stack.contains(nums[i])){
-                 stack.push(nums[i]);
-            }else {
-                stack.pop();
-            }
+        for (int temp : nums){
+            res ^= temp;
         }
 
-
-        return stack.pop();
+        return res;
     }
 
 }
