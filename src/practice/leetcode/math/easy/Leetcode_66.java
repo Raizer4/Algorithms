@@ -1,4 +1,4 @@
-package practice.leetcode.array.easy;
+package practice.leetcode.math.easy;
 
 // Plus One
 // https://leetcode.com/problems/plus-one/description/
