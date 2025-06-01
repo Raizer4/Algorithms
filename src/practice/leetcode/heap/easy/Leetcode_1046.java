@@ -30,12 +30,13 @@ public class Leetcode_1046 {
             }
         }
 
+
+
         if (priorityQueue.isEmpty()){
             return -1;
         }else {
             return priorityQueue.peek();
         }
-
 
     }
 
