@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.two_pointers.medium;
 
 // 3Sum Closest
 // https://leetcode.com/problems/3sum-closest/description/

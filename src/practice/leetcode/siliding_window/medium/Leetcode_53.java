@@ -1,4 +1,4 @@
-package practice.leetcode.greedy.medium;
+package practice.leetcode.siliding_window.medium;
 
 // Maximum Subarray
 // https://leetcode.com/problems/maximum-subarray/description/

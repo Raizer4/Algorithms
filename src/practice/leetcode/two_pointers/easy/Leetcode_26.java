@@ -1,10 +1,8 @@
-package practice.leetcode.array.easy;
+package practice.leetcode.two_pointers.easy;
 
 // Remove Duplicates from Sorted Array
 // https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class Leetcode_26 {
 
@@ -14,19 +12,17 @@ public class Leetcode_26 {
     }
 
     public static int removeDuplicates(int[] nums) {
-        List<Integer> list = new ArrayList<>();
-        int k = 0;
+        int j = 0;
+        int count = 1;
 
-        for (int i = 0; i < nums.length;i++){
-            int temp = nums[i];
-            if (!list.contains(temp)){
-                nums[k] = temp;
-                list.add(temp);
-                k++;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[j] != nums[i]){
+                nums[++j] = nums[i];
+                count++;
             }
         }
 
-        return list.size();
+        return count;
     }
 
 }

@@ -1,4 +1,4 @@
-package practice.leetcode.hash_table.medium;
+package practice.leetcode.prefix_sum.medium;
 
 // Subarray Sum Equals K
 // https://leetcode.com/problems/subarray-sum-equals-k/description/
