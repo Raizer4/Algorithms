@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.prefix_sum.medium;
 
 // Contiguous Array
 // https://leetcode.com/problems/contiguous-array/description/

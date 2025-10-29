@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.two_pointers.hard;
 
 // Rearranging Fruits
 // https://leetcode.com/problems/rearranging-fruits/description/?envType=daily-question&envId=2025-08-02
@@ -16,7 +16,7 @@ public class Leetcode_2561 {
         Map<Integer, Integer> map_1 = new HashMap<>();
         Map<Integer, Integer> map_2 = new HashMap<>();
 
-        int min= Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
 
         for (int i = 0; i < basket1.length; i++) {
             map_1.put(basket1[i], map_1.getOrDefault(basket1[i], 0) + 1);
@@ -96,7 +96,6 @@ public class Leetcode_2561 {
 
         Collections.sort(list_1);
         list_2.sort(Comparator.reverseOrder());
-
 
         long count = 0;
 

@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.string.easy;
 
 // Ransom Note
 // https://leetcode.com/problems/ransom-note/description/

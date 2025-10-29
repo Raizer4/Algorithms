@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.siliding_window.hard;
 
 // Subarrays with K Different Integers
 // https://leetcode.com/problems/subarrays-with-k-different-integers/description/

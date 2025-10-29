@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.siliding_window.medium;
 
 // Count Substrings With K-Frequency Characters I
 // https://leetcode.com/problems/count-substrings-with-k-frequency-characters-i/description/
@@ -15,7 +15,6 @@ public class Leetcode_3325 {
     public static int numberOfSubstrings(String s, int k) {
         Map<Character, Integer> map = new HashMap<>();
 
-        int num = 0;
         int count = 0;
         int l = 0;
         int answer = 0;
@@ -23,17 +22,10 @@ public class Leetcode_3325 {
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
 
-            if (!map.containsKey(c)) {
-                map.put(c, 1);
-            } else {
-                map.put(c, map.get(c) + 1);
-            }
+            Integer put = map.getOrDefault(c,0) + 1;
+            map.put(c, put);
 
-            if (((map.get(c)) >= k)){
-                num++;
-            }
-
-            while (l < i && num >= 1 && map.containsKey(s.charAt(l)) && map.get(s.charAt(l)) < k){
+            while (l < i && put >= k && map.get(s.charAt(l)) < k){
                 count++;
 
                 int integer = map.get(s.charAt(l));
@@ -47,30 +39,22 @@ public class Leetcode_3325 {
                 l++;
             }
 
-            if (num >= 1){
+            if (put >= k) {
                 int temp = s.length() - i;
                 answer += (temp);
-                answer +=  (temp * count);
+                answer += (temp * count);
 
-                while (l < i && num >= 1){
-                    char let = s.charAt(l);
+                char let = s.charAt(l);
+                int integer = map.get(let);
 
-                    int integer = map.get(let);
-
-                    if (integer == k){
-                        num--;
-                    }
-
-                    if (integer == 1){
-                        map.remove(let);
-                    }else {
-                        map.put(let, integer - 1);
-                    }
-
-                    count = 0;
-                    num = 0;
-                    l++;
+                if (integer == 1) {
+                    map.remove(let);
+                } else {
+                    map.put(let, integer - 1);
                 }
+
+                count = 0;
+                l++;
             }
         }
 

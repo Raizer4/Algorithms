@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.siliding_window.hard;
 
 // Minimum Number of Operations to Make Array Continuous
 // https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous/description/

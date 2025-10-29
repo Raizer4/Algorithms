@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.siliding_window.medium;
 
 // Get Equal Substrings Within Budget
 // https://leetcode.com/problems/get-equal-substrings-within-budget/description/

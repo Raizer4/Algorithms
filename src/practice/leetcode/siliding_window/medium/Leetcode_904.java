@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.siliding_window.medium;
 
 // Fruit Into Baskets
 // https://leetcode.com/problems/fruit-into-baskets/description/

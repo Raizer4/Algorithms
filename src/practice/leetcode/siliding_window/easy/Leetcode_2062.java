@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.siliding_window.easy;
 
 // Count Vowel Substrings of a String
 // https://leetcode.com/problems/count-vowel-substrings-of-a-string/description/
