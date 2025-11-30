@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.binary_search.medium;
 
 // Find a Peak Element II
 // https://leetcode.com/problems/find-a-peak-element-ii/description/

@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.prefix_sum.medium;
 
 // Removing Minimum Number of Magic Beans
 // https://leetcode.com/problems/removing-minimum-number-of-magic-beans/description/

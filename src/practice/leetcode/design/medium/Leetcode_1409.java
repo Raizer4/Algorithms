@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.design.medium;
 
 // Queries on a Permutation With Key
 // https://leetcode.com/problems/queries-on-a-permutation-with-key/description/?envType=problem-list-v2&envId=binary-indexed-tree

@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.design.medium;
 
 // Range Sum Query - Mutable
 // https://leetcode.com/problems/range-sum-query-mutable/description/

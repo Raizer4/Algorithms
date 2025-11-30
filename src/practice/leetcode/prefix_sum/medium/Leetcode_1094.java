@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.prefix_sum.medium;
 
 // Car Pooling
 // https://leetcode.com/problems/car-pooling/description/

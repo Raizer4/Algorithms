@@ -1,4 +1,4 @@
-package practice.leetcode;
+package practice.leetcode.design.medium;
 
 // Queue Reconstruction by Height
 // https://leetcode.com/problems/queue-reconstruction-by-height/description/?envType=problem-list-v2&envId=binary-indexed-tree
