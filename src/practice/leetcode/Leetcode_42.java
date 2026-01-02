@@ -1,4 +1,4 @@
-package practice.leetcode.two_pointers.hard;
+package practice.leetcode;
 
 // Trapping Rain Water
 // https://leetcode.com/problems/trapping-rain-water/description/
